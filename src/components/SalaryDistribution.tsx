@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Loader2 } from 'lucide-react'
 
 type SalaryBucket = {
@@ -16,6 +17,7 @@ type SalaryDistributionProps = {
 }
 
 export function SalaryDistribution({ role, paymentType }: SalaryDistributionProps) {
+  const t = useTranslations('distribution')
   const [buckets, setBuckets] = useState<SalaryBucket[]>([])
   const [loading, setLoading] = useState(false)
   const [maxCount, setMaxCount] = useState(0)
@@ -69,7 +71,7 @@ export function SalaryDistribution({ role, paymentType }: SalaryDistributionProp
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold gradient-text">Salary Distribution</h3>
+      <h3 className="text-lg font-semibold gradient-text">{t('title')}</h3>
       
       <div className="space-y-3">
         {buckets.map((bucket, idx) => (
@@ -78,7 +80,7 @@ export function SalaryDistribution({ role, paymentType }: SalaryDistributionProp
               <span className="text-muted-foreground">
                 {formatSalary(bucket.min)} - {formatSalary(bucket.max)}
               </span>
-              <span className="text-foreground font-medium">{bucket.count} people</span>
+              <span className="text-foreground font-medium">{bucket.count} {t('people')}</span>
             </div>
             
             <div className="w-full bg-purple-500/10 rounded-full h-2 overflow-hidden border border-purple-500/20">
@@ -91,7 +93,7 @@ export function SalaryDistribution({ role, paymentType }: SalaryDistributionProp
             </div>
             
             <div className="text-xs text-muted-foreground">
-              {bucket.percentage.toFixed(1)}% of submissions
+              {bucket.percentage.toFixed(1)}% {t('ofSubmissions')}
             </div>
           </div>
         ))}

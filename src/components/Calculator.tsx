@@ -139,6 +139,13 @@ export function Calculator({ locale, translations }: CalculatorProps) {
           paymentType={filters.paymentType}
           locale={locale}
           role={filters.role}
+          filters={{
+            experienceLevel: filters.experience,
+            employmentType: filters.employment,
+            city: filters.city,
+            companyType: filters.companyType,
+            techStack: filters.techStack ? filters.techStack.split(',').map(t => t.trim()) : []
+          }}
           translations={translations.result}
           submitTranslations={translations.submit}
         />

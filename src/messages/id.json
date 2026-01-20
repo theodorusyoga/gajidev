@@ -63,5 +63,33 @@
   "nav": {
     "home": "Beranda",
     "submit": "Bagikan Gaji"
-  }
+  },
+  "percentile": {
+    "title": "Bandingkan Gaji Kamu",
+    "label": "Masukkan gaji kamu saat ini",
+    "button": "Bandingkan",
+    "buttonLoading": "Menghitung...",
+    "percentileRank": "Persentil",
+    "topTier": "Penghasil top 10%",
+    "topQuarter": "Penghasil top 25%",
+    "aboveAverage": "Di atas rata-rata",
+    "aroundAverage": "Sekitar rata-rata",
+    "belowAverage": "Di bawah rata-rata",
+    "message": "Gaji kamu sebesar __salary__ lebih tinggi dari __percentile__% __role__ yang berpenghasilan __paymentType__.",
+    "recommendation1": "Kamu termasuk tier teratas! Pertimbangkan untuk negosiasi role senior.",
+    "recommendation2": "Kamu di atas rata-rata. Terus kembangkan skill kamu!",
+    "recommendation3": "Ada ruang untuk berkembang. Pertimbangkan untuk upskilling atau mencari pekerjaan baru.",
+    "min": "Min",
+    "max": "Maks",
+    "yourSalary": "Gaji Kamu",
+    "monthly": "bulanan",
+    "yearly": "tahunan",
+    "hourly": "per jam"
+  },
+  "distribution": {
+    "title": "Distribusi Gaji",
+    "people": "orang",
+    "ofSubmissions": "dari data"
+  },
+  "percentileLabel": "Persentil Kamu"
 }

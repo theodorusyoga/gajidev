@@ -63,5 +63,33 @@
   "nav": {
     "home": "Home",
     "submit": "Share Salary"
-  }
+  },
+  "percentile": {
+    "title": "Compare Your Salary",
+    "label": "Enter your current salary",
+    "button": "Compare",
+    "buttonLoading": "Calculating...",
+    "percentileRank": "th Percentile",
+    "topTier": "Top 10% earners",
+    "topQuarter": "Top 25% earners",
+    "aboveAverage": "Above average",
+    "aroundAverage": "Around average",
+    "belowAverage": "Below average",
+    "message": "Your salary of __salary__ is higher than __percentile__% of __role__s earning __paymentType__.",
+    "recommendation1": "You are in the top tier! Consider negotiating for senior roles.",
+    "recommendation2": "You are above average. Keep developing your skills!",
+    "recommendation3": "There is room for growth. Consider upskilling or job hunting.",
+    "min": "Min",
+    "max": "Max",
+    "yourSalary": "Your Salary",
+    "monthly": "monthly",
+    "yearly": "yearly",
+    "hourly": "hourly"
+  },
+  "distribution": {
+    "title": "Salary Distribution",
+    "people": "people",
+    "ofSubmissions": "of data"
+  },
+  "percentileLabel": "Your Percentile"
 }

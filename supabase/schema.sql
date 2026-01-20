@@ -39,9 +39,25 @@ CREATE TABLE IF NOT EXISTS submissions (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Table: salary_comparisons (Analytics for percentile comparison feature)
+CREATE TABLE IF NOT EXISTS salary_comparisons (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_salary BIGINT NOT NULL,
+  percentile DECIMAL(5,2),
+  role TEXT NOT NULL,
+  experience_level TEXT,
+  employment_type TEXT,
+  city TEXT,
+  company_type TEXT,
+  payment_type TEXT NOT NULL,
+  tech_stack TEXT[],
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Enable Row Level Security
 ALTER TABLE salary_data ENABLE ROW LEVEL SECURITY;
 ALTER TABLE submissions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE salary_comparisons ENABLE ROW LEVEL SECURITY;
 
 -- Policy: Allow public read for salary_data
 CREATE POLICY "Allow public read" ON salary_data
@@ -53,6 +69,10 @@ CREATE POLICY "Allow anonymous insert salary_data" ON salary_data
 
 -- Policy: Allow anonymous insert for submissions
 CREATE POLICY "Allow anonymous insert" ON submissions
+  FOR INSERT WITH CHECK (true);
+
+-- Policy: Allow anonymous insert for salary_comparisons (analytics)
+CREATE POLICY "Allow anonymous insert comparisons" ON salary_comparisons
   FOR INSERT WITH CHECK (true);
 
 -- Policy: Allow admin to read and update submissions (using JWT claim)

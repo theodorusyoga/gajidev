@@ -6,6 +6,7 @@ import { formatCurrency, getPaymentSuffix } from '@/lib/constants'
 import { Sparkles, ArrowRight, Filter } from 'lucide-react'
 import { SubmitDialog } from './SubmitDialog'
 import { SalaryDistribution } from './SalaryDistribution'
+import { PercentileComparison } from './PercentileComparison'
 
 type SalaryResult = {
   salary_min: number
@@ -21,6 +22,13 @@ type SalaryCardProps = {
   paymentType: string
   locale: string
   role: string
+  filters?: {
+    experienceLevel?: string
+    employmentType?: string
+    city?: string
+    companyType?: string
+    techStack?: string[]
+  }
   translations: {
     title: string
     salaryRange: string
@@ -56,7 +64,7 @@ type SalaryCardProps = {
   }
 }
 
-export function SalaryCard({ result, paymentType, locale, role, translations, submitTranslations }: SalaryCardProps) {
+export function SalaryCard({ result, paymentType, locale, role, filters, translations, submitTranslations }: SalaryCardProps) {
   const suffix = getPaymentSuffix(paymentType || 'monthly', locale)
 
   if (!result) {
@@ -137,8 +145,18 @@ export function SalaryCard({ result, paymentType, locale, role, translations, su
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-purple-500/20">
+        <div className="mt-8 pt-8 border-t border-purple-500/20 space-y-8">
           <SalaryDistribution role={role} paymentType={paymentType} />
+          
+          <div className="border-t border-purple-500/20 pt-8">
+            <PercentileComparison
+              role={role}
+              paymentType={paymentType}
+              salaryMin={result.salary_min}
+              salaryMax={result.salary_max}
+              filters={filters}
+            />
+          </div>
         </div>
       </div>
     </div>
