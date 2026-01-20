@@ -211,3 +211,58 @@ export function getPaymentSuffix(paymentType: string, locale: string): string {
   }
   return locale === 'id' ? suffixes[paymentType]?.id : suffixes[paymentType]?.en
 }
+
+export function formatRoleDisplay(roleValue: string): string {
+  const role = ROLES.find(r => r.value === roleValue)
+  if (role) {
+    return role.label.en
+  }
+  // Fallback: convert kebab-case to Title Case
+  return roleValue
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
+export function formatTechStackDisplay(techValue: string): string {
+  const tech = TECH_STACKS.find(t => t.value === techValue)
+  if (tech) {
+    return tech.label
+  }
+  // Fallback: convert kebab-case to Title Case
+  return techValue
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
+export function formatCityDisplay(cityValue: string): string {
+  const city = CITIES.find(c => c.value === cityValue)
+  if (city) {
+    const label = city.label
+    return typeof label === 'string' ? label : label.en
+  }
+  // Fallback: Title Case
+  return cityValue.charAt(0).toUpperCase() + cityValue.slice(1)
+}
+
+export function formatEmploymentTypeDisplay(employmentValue: string): string {
+  const employment = EMPLOYMENT_TYPES.find(e => e.value === employmentValue)
+  if (employment) {
+    return employment.label.en
+  }
+  // Fallback: Title Case
+  return employmentValue
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
+export function formatExperienceLevelDisplay(levelValue: string): string {
+  const level = EXPERIENCE_LEVELS.find(l => l.value === levelValue)
+  if (level) {
+    return level.label.en
+  }
+  // Fallback: Title Case
+  return levelValue.charAt(0).toUpperCase() + levelValue.slice(1)
+}

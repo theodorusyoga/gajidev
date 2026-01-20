@@ -18,7 +18,13 @@ import {
   Eye,
   LogOut,
 } from 'lucide-react'
-import { formatCurrency } from '@/lib/constants'
+import { 
+  formatCurrency, 
+  formatRoleDisplay, 
+  formatTechStackDisplay,
+  formatCityDisplay,
+  formatEmploymentTypeDisplay,
+} from '@/lib/constants'
 
 type Submission = {
   id: string
@@ -223,7 +229,7 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 space-y-2">
                     <div className="flex items-center gap-3">
-                      <h3 className="font-semibold capitalize">{submission.role}</h3>
+                      <h3 className="font-semibold">{formatRoleDisplay(submission.role)}</h3>
                       {getStatusBadge(submission)}
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-muted-foreground">
@@ -231,10 +237,10 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
                         <span className="text-foreground font-medium">{submission.years_of_experience}y</span> exp
                       </div>
                       <div>
-                        <span className="text-foreground font-medium">{submission.city}</span>
+                        <span className="text-foreground font-medium">{formatCityDisplay(submission.city)}</span>
                       </div>
                       <div>
-                        <span className="text-foreground font-medium">{submission.employment_type}</span>
+                        <span className="text-foreground font-medium">{formatEmploymentTypeDisplay(submission.employment_type)}</span>
                       </div>
                       <div>
                         <span className="text-foreground font-medium">
@@ -246,8 +252,8 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
                     {submission.tech_stack && submission.tech_stack.length > 0 && (
                       <div className="flex flex-wrap gap-1 pt-2">
                         {submission.tech_stack.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="text-xs">
-                            {tech}
+                          <Badge key={tech} variant="outline" className="text-xs">
+                            {formatTechStackDisplay(tech)}
                           </Badge>
                         ))}
                       </div>
@@ -280,7 +286,7 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
             <DialogHeader>
               <DialogTitle>Review Submission</DialogTitle>
               <DialogDescription>
-                {selectedSubmission.role} • {selectedSubmission.years_of_experience}y exp
+                {formatRoleDisplay(selectedSubmission.role)} • {selectedSubmission.years_of_experience}y exp
               </DialogDescription>
             </DialogHeader>
 
@@ -288,11 +294,11 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="text-muted-foreground">City</p>
-                  <p className="font-medium">{selectedSubmission.city}</p>
+                  <p className="font-medium">{formatCityDisplay(selectedSubmission.city)}</p>
                 </div>
                 <div>
                   <p className="text-muted-foreground">Employment</p>
-                  <p className="font-medium">{selectedSubmission.employment_type}</p>
+                  <p className="font-medium">{formatEmploymentTypeDisplay(selectedSubmission.employment_type)}</p>
                 </div>
                 <div>
                   <p className="text-muted-foreground">Company Type</p>
@@ -317,7 +323,7 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
                   <div className="flex flex-wrap gap-2">
                     {selectedSubmission.tech_stack.map((tech) => (
                       <Badge key={tech} variant="secondary">
-                        {tech}
+                        {formatTechStackDisplay(tech)}
                       </Badge>
                     ))}
                   </div>

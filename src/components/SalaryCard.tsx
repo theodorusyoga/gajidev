@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { formatCurrency, getPaymentSuffix } from '@/lib/constants'
 import { Sparkles, ArrowRight, Filter } from 'lucide-react'
 import { SubmitDialog } from './SubmitDialog'
+import { SalaryDistribution } from './SalaryDistribution'
 
 type SalaryResult = {
   salary_min: number
@@ -19,6 +20,7 @@ type SalaryCardProps = {
   result: SalaryResult
   paymentType: string
   locale: string
+  role: string
   translations: {
     title: string
     salaryRange: string
@@ -54,7 +56,7 @@ type SalaryCardProps = {
   }
 }
 
-export function SalaryCard({ result, paymentType, locale, translations, submitTranslations }: SalaryCardProps) {
+export function SalaryCard({ result, paymentType, locale, role, translations, submitTranslations }: SalaryCardProps) {
   const suffix = getPaymentSuffix(paymentType || 'monthly', locale)
 
   if (!result) {
@@ -133,6 +135,10 @@ export function SalaryCard({ result, paymentType, locale, translations, submitTr
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-purple-500/20">
+          <SalaryDistribution role={role} paymentType={paymentType} />
         </div>
       </div>
     </div>

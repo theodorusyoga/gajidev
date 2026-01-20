@@ -28,15 +28,20 @@ export function AdminPageClient() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold gradient-text mb-2">Admin Dashboard</h1>
-          <p className="text-muted-foreground">Manage salary submissions and approvals</p>
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold gradient-text mb-3">Admin Dashboard</h1>
+          <p className="text-muted-foreground text-lg">Manage salary submissions and approvals</p>
         </div>
-        <AdminLogin onLoginSuccess={(token) => {
-          setAdminToken(token)
-        }} />
+        
+        <div className="max-w-md mx-auto">
+          <div className="bg-gradient-to-br from-purple-950/50 via-background to-pink-950/30 border border-purple-500/20 rounded-lg p-8">
+            <AdminLogin onLoginSuccess={(token) => {
+              setAdminToken(token)
+            }} />
+          </div>
+        </div>
       </div>
     </div>
   )

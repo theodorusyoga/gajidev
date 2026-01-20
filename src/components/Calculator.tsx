@@ -138,6 +138,7 @@ export function Calculator({ locale, translations }: CalculatorProps) {
           result={result}
           paymentType={filters.paymentType}
           locale={locale}
+          role={filters.role}
           translations={translations.result}
           submitTranslations={translations.submit}
         />

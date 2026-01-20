@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
+function formatSalaryForMessage(salary: number): string {
+  return new Intl.NumberFormat('id-ID').format(Math.round(salary))
+}
+
 function detectOutliers(
   salary: number,
   yearsOfExperience: number,
@@ -20,7 +24,7 @@ function detectOutliers(
     if (monthlySalary < 3000000 || monthlySalary > 50000000) {
       return {
         isSuspicious: true,
-        reason: `Junior with ${yearsOfExperience}y exp earning ${monthlySalary}M/month seems unrealistic`,
+        reason: `Junior with ${yearsOfExperience}y exp earning ${formatSalaryForMessage(monthlySalary)}/month seems unrealistic`,
       }
     }
   }
@@ -30,7 +34,7 @@ function detectOutliers(
     if (monthlySalary < 8000000 || monthlySalary > 80000000) {
       return {
         isSuspicious: true,
-        reason: `Mid-level with ${yearsOfExperience}y exp earning ${monthlySalary}M/month seems unrealistic`,
+        reason: `Mid-level with ${yearsOfExperience}y exp earning ${formatSalaryForMessage(monthlySalary)}/month seems unrealistic`,
       }
     }
   }
@@ -40,7 +44,7 @@ function detectOutliers(
     if (monthlySalary < 15000000 || monthlySalary > 200000000) {
       return {
         isSuspicious: true,
-        reason: `Senior with ${yearsOfExperience}y exp earning ${monthlySalary}M/month seems unrealistic`,
+        reason: `Senior with ${yearsOfExperience}y exp earning ${formatSalaryForMessage(monthlySalary)}/month seems unrealistic`,
       }
     }
   }
