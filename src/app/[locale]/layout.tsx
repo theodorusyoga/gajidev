@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: 'https://gajidev.netlify.app',
+      url: 'https://gaji.dev',
       siteName: 'GajiDev',
       locale: locale === 'id' ? 'id_ID' : 'en_US',
       type: 'website',
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     robots: { index: true, follow: true },
     alternates: {
-      canonical: 'https://gajidev.netlify.app',
+      canonical: 'https://gaji.dev',
       languages: { id: '/id', en: '/en' },
     },
   }
