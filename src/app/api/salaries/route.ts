@@ -33,7 +33,13 @@ export async function GET(request: NextRequest) {
     query = query.eq('payment_type', paymentType)
   }
   if (techStack) {
-    query = query.contains('tech_stack', [techStack])
+    const techStackSplit = techStack.split(',').map(stack => stack.trim()).filter(stack => stack)
+
+    if (techStackSplit.length > 0) {
+      query = query.or(
+        techStackSplit.map(stack => `tech_stack.cs.{${stack}}`).join(',')
+      )
+    }
   }
 
   const { data, error } = await query

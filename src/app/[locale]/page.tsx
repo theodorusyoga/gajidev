@@ -44,6 +44,7 @@ export default async function HomePage({ params }: Props) {
             company: filtersT('company'),
             payment: filtersT('payment'),
             techStack: filtersT('techStack'),
+            techStackMultiple: filtersT('techStackMultiple'),
             selectPlaceholder: filtersT('selectPlaceholder'),
           },
           result: {

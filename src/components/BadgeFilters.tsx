@@ -22,9 +22,9 @@ type BadgeFiltersProps = {
     city: string
     companyType: string
     paymentType: string
-    techStack: string
+    techStack: string[]
   }
-  onFilterChange: (key: string, value: string) => void
+  onFilterChange: (key: string, value: string | string[]) => void
   translations: {
     role: string
     experience: string
@@ -33,17 +33,18 @@ type BadgeFiltersProps = {
     company: string
     payment: string
     techStack: string
+    techStackMultiple: string
   }
 }
 
-function FilterBadge({ 
-  selected, 
-  onClick, 
-  children 
-}: { 
+function FilterBadge({
+  selected,
+  onClick,
+  children
+}: {
   selected: boolean
   onClick: () => void
-  children: React.ReactNode 
+  children: React.ReactNode
 }) {
   return (
     <button
@@ -51,8 +52,8 @@ function FilterBadge({
       className={`
         inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium
         transition-all duration-200 border
-        ${selected 
-          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-transparent shadow-lg shadow-purple-500/25' 
+        ${selected
+          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-transparent shadow-lg shadow-purple-500/25'
           : 'bg-background border-border hover:border-purple-500/50 hover:bg-purple-500/10 text-foreground'
         }
       `}
@@ -63,20 +64,26 @@ function FilterBadge({
   )
 }
 
-function FilterSection({ 
-  icon: Icon, 
-  title, 
-  children 
-}: { 
+function FilterSection({
+  icon: Icon,
+  title,
+  subtitle,
+  children
+}: {
   icon: React.ElementType
   title: string
-  children: React.ReactNode 
+  subtitle?: string
+  children: React.ReactNode
 }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2">
         <Icon className="h-4 w-4 text-purple-400" />
         <h3 className="text-sm font-semibold gradient-text">{title}</h3>
+        {
+          subtitle &&
+            <div className="text-xs text-muted-foreground ml-1">{subtitle}</div>
+        }
       </div>
       <div className="flex flex-wrap gap-2">
         {children}
@@ -108,8 +115,8 @@ export function BadgeFilters({ locale, filters, onFilterChange, translations }: 
           ))}
         </div>
         {hiddenRoles.length > 0 && (
-          <ExpandableFilterSection 
-            icon={Code2} 
+          <ExpandableFilterSection
+            icon={Code2}
             title={`+${hiddenRoles.length} more`}
             defaultExpanded={false}
           >
@@ -187,12 +194,17 @@ export function BadgeFilters({ locale, filters, onFilterChange, translations }: 
       </FilterSection>
 
       <div className="md:col-span-2 lg:col-span-3">
-        <FilterSection icon={Layers} title={translations.techStack}>
+        <FilterSection icon={Layers} title={translations.techStack} subtitle={translations.techStackMultiple}>
           {TECH_STACKS.map((tech) => (
             <FilterBadge
               key={tech.value}
-              selected={filters.techStack === tech.value}
-              onClick={() => onFilterChange('techStack', filters.techStack === tech.value ? '' : tech.value)}
+              selected={filters.techStack.includes(tech.value)}
+              onClick={() => {
+                const newTechStack = filters.techStack.includes(tech.value)
+                  ? filters.techStack.filter(t => t !== tech.value)
+                  : [...filters.techStack, tech.value]
+                onFilterChange('techStack', newTechStack)
+              }}
             >
               {tech.label}
             </FilterBadge>

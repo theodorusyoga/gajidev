@@ -27,6 +27,7 @@
     "company": "Company Type",
     "payment": "Payment Type",
     "techStack": "Tech Stack",
+    "techStackMultiple": "You can select multiple",
     "selectPlaceholder": "Select..."
   },
   "result": {

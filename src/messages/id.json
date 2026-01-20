@@ -27,6 +27,7 @@
     "company": "Tipe Perusahaan",
     "payment": "Tipe Pembayaran",
     "techStack": "Tech Stack",
+    "techStackMultiple": "Bisa pilih lebih dari satu",
     "selectPlaceholder": "Pilih..."
   },
   "result": {

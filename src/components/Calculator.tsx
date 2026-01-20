@@ -26,6 +26,7 @@ type CalculatorProps = {
       company: string
       payment: string
       techStack: string
+      techStackMultiple: string
       selectPlaceholder: string
     }
     result: {
@@ -72,7 +73,7 @@ export function Calculator({ locale, translations }: CalculatorProps) {
     city: '',
     companyType: '',
     paymentType: 'monthly',
-    techStack: '',
+    techStack: [] as string[],
   })
   const [result, setResult] = useState<SalaryResult>(null)
   const [loading, setLoading] = useState(false)
@@ -92,7 +93,7 @@ export function Calculator({ locale, translations }: CalculatorProps) {
       if (filters.city) params.append('city', filters.city)
       if (filters.companyType) params.append('company_type', filters.companyType)
       if (filters.paymentType) params.append('payment_type', filters.paymentType)
-      if (filters.techStack) params.append('tech_stack', filters.techStack)
+      if (filters.techStack.length > 0) params.append('tech_stack', filters.techStack.join(','))
 
       const response = await fetch(`/api/salaries?${params.toString()}`)
       const data = await response.json()
@@ -113,13 +114,13 @@ export function Calculator({ locale, translations }: CalculatorProps) {
     return () => clearTimeout(debounceTimer)
   }, [fetchSalaryData])
 
-  const handleFilterChange = (key: string, value: string) => {
+  const handleFilterChange = (key: string, value: string | string[]) => {
     setFilters((prev) => ({ ...prev, [key]: value }))
     
     // Track filter change event
     event('filter_changed', {
       filter_type: key,
-      filter_value: value,
+      filter_value: Array.isArray(value) ? value.join(',') : value,
       locale: locale,
     })
   }
@@ -152,7 +153,7 @@ export function Calculator({ locale, translations }: CalculatorProps) {
             employmentType: filters.employment,
             city: filters.city,
             companyType: filters.companyType,
-            techStack: filters.techStack ? filters.techStack.split(',').map(t => t.trim()) : []
+            techStack: filters.techStack
           }}
           translations={translations.result}
           submitTranslations={translations.submit}
