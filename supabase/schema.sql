@@ -54,13 +54,29 @@ CREATE TABLE IF NOT EXISTS salary_comparisons (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Table: feedback (User feedback submissions)
+CREATE TABLE IF NOT EXISTS feedback (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT,
+  email TEXT NOT NULL,
+  phone TEXT,
+  type TEXT NOT NULL,
+  description TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Enable Row Level Security
 ALTER TABLE salary_data ENABLE ROW LEVEL SECURITY;
 ALTER TABLE submissions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE salary_comparisons ENABLE ROW LEVEL SECURITY;
+ALTER TABLE feedback ENABLE ROW LEVEL SECURITY;
 
 -- Policy: Allow public read for salary_data
 CREATE POLICY "Allow public read" ON salary_data
+  FOR SELECT USING (true);
+
+-- Policy: Allow public read for salary_comparisons
+CREATE POLICY "Allow public read comparisons" ON salary_comparisons
   FOR SELECT USING (true);
 
 -- Policy: Allow anonymous insert for salary_data (for auto-approved submissions)
@@ -73,6 +89,10 @@ CREATE POLICY "Allow anonymous insert" ON submissions
 
 -- Policy: Allow anonymous insert for salary_comparisons (analytics)
 CREATE POLICY "Allow anonymous insert comparisons" ON salary_comparisons
+  FOR INSERT WITH CHECK (true);
+
+-- Policy: Allow anonymous insert for feedback
+CREATE POLICY "Allow anonymous insert feedback" ON feedback
   FOR INSERT WITH CHECK (true);
 
 -- Policy: Allow admin to read and update submissions (using JWT claim)

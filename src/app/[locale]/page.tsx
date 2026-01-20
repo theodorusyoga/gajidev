@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { Calculator } from '@/components/Calculator'
 import { SalaryShowcase } from '@/components/SalaryShowcase'
+import { StatisticsBar } from '@/components/StatisticsBar'
 import { SubmitDialog } from '@/components/SubmitDialog'
 import { HomePageClient } from '@/components/HomePageClient'
 import { Button } from '@/components/ui/button'
@@ -28,6 +29,8 @@ export default async function HomePage({ params }: Props) {
           {t('subtitle')}
         </p>
       </div>
+
+      <StatisticsBar />
 
       <SalaryShowcase />
 

@@ -91,5 +91,33 @@
     "people": "orang",
     "ofSubmissions": "dari data"
   },
-  "percentileLabel": "Persentil Kamu"
+  "percentileLabel": "Persentil Kamu",
+  "feedback": {
+    "button": "Feedback",
+    "title": "Kirim Feedback",
+    "subtitle": "Bantu kami meningkatkan GajiDev dengan membagikan pendapat kamu",
+    "name": "Nama (Opsional)",
+    "namePlaceholder": "Nama kamu",
+    "email": "Email",
+    "emailPlaceholder": "email.kamu@example.com",
+    "phone": "Nomor Telepon (Opsional)",
+    "phonePlaceholder": "08123456789",
+    "type": "Tipe Feedback",
+    "typeGeneral": "Feedback Umum",
+    "typeBug": "Laporan Bug",
+    "typeFeature": "Permintaan Fitur",
+    "typeOther": "Lainnya",
+    "description": "Deskripsi",
+    "descriptionPlaceholder": "Ceritakan lebih lanjut tentang feedback kamu...",
+    "submit": "Kirim Feedback",
+    "submitting": "Mengirim...",
+    "success": "Terima kasih atas feedback kamu!",
+    "successMessage": "Kami menghargai masukan kamu dan akan meninjau segera.",
+    "error": "Gagal mengirim feedback. Silakan coba lagi."
+  },
+  "stats": {
+    "salaries": "Data Gaji",
+    "roles": "Role Pekerjaan",
+    "comparisons": "Perbandingan Gaji"
+  }
 }

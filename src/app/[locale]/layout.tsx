@@ -76,9 +76,6 @@ export default async function LocaleLayout({ children, params }: Props) {
                 GajiDev
               </Link>
               <nav className="flex items-center gap-4">
-                <Link href="/" className="text-sm hover:text-foreground text-muted-foreground">
-                  {t('home')}
-                </Link>
                 <SubmitNavLink
                   label={t('submit')}
                   locale={locale}
@@ -105,9 +102,6 @@ export default async function LocaleLayout({ children, params }: Props) {
                     selectPlaceholder: submitT('selectPlaceholder'),
                   }}
                 />
-                <a href="/admin" className="text-sm hover:text-foreground text-muted-foreground" suppressHydrationWarning>
-                  Admin
-                </a>
                 <LanguageSwitcher locale={locale} />
               </nav>
             </div>

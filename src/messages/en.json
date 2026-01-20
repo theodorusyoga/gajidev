@@ -91,5 +91,33 @@
     "people": "people",
     "ofSubmissions": "of data"
   },
-  "percentileLabel": "Your Percentile"
+  "percentileLabel": "Your Percentile",
+  "feedback": {
+    "button": "Feedback",
+    "title": "Send Feedback",
+    "subtitle": "Help us improve GajiDev by sharing your thoughts",
+    "name": "Name (Optional)",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "phone": "Phone Number (Optional)",
+    "phonePlaceholder": "08123456789",
+    "type": "Feedback Type",
+    "typeGeneral": "General Feedback",
+    "typeBug": "Bug Report",
+    "typeFeature": "Feature Request",
+    "typeOther": "Other",
+    "description": "Description",
+    "descriptionPlaceholder": "Tell us more about your feedback...",
+    "submit": "Submit Feedback",
+    "submitting": "Sending...",
+    "success": "Thank you for your feedback!",
+    "successMessage": "We appreciate your input and will review it soon.",
+    "error": "Failed to send feedback. Please try again."
+  },
+  "stats": {
+    "salaries": "Salary Data Points",
+    "roles": "Job Roles",
+    "comparisons": "Salary Comparisons"
+  }
 }
