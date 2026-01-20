@@ -14,6 +14,7 @@
     "city": "City",
     "company": "Company Type",
     "payment": "Payment Type",
+    "techStack": "Tech Stack",
     "selectPlaceholder": "Select..."
   },
   "result": {
@@ -25,13 +26,16 @@
     "perHour": "/hour",
     "basedOn": "Based on __count__ data points from __sources__",
     "noData": "No data available for selected filters",
-    "tryAdjusting": "Try adjusting filters to see results"
+    "tryAdjusting": "Try adjusting filters to see results",
+    "noDataTitle": "Select filters to see salary estimates",
+    "noDataSubtitle": "Use the filters above to see salary ranges by role, experience, and location. Or help us by adding your salary data!",
+    "noDataCta": "Share Your Salary"
   },
   "submit": {
     "title": "Share Your Salary",
     "subtitle": "Help other developers by sharing your salary data anonymously.",
     "cta": "Share Anonymous Salary",
-    "formTitle": "Anonymous Form",
+    "formTitle": "Share Anonymous Salary",
     "salary": "Salary",
     "salaryPlaceholder": "Enter salary in Rupiah",
     "yearsOfExperience": "Years of Experience",
@@ -40,8 +44,16 @@
     "button": "Submit Data",
     "submitting": "Submitting...",
     "success": "Thank you! Your data has been submitted anonymously.",
+    "successTitle": "Data Successfully Submitted!",
+    "successSubtitle": "Thank you for contributing! Your data will help other developers get more accurate salary information.",
     "error": "An error occurred. Please try again.",
-    "anonymous": "Data is submitted anonymously. We do not collect personal information."
+    "anonymous": "Data is submitted anonymously. We do not collect personal information.",
+    "role": "Role",
+    "employment": "Employment Type",
+    "city": "City",
+    "company": "Company Type",
+    "payment": "Payment Type",
+    "selectPlaceholder": "Select..."
   },
   "footer": {
     "sources": "Data sources: NodeFlair, Glassdoor, Dicoding, Community",

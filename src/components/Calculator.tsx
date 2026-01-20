@@ -1,9 +1,8 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { Filters } from './Filters'
+import { BadgeFilters } from './BadgeFilters'
 import { SalaryCard } from './SalaryCard'
-import { Card, CardContent } from '@/components/ui/card'
 import { Loader2 } from 'lucide-react'
 
 type SalaryResult = {
@@ -25,6 +24,7 @@ type CalculatorProps = {
       city: string
       company: string
       payment: string
+      techStack: string
       selectPlaceholder: string
     }
     result: {
@@ -34,6 +34,31 @@ type CalculatorProps = {
       basedOn: string
       noData: string
       tryAdjusting: string
+      noDataTitle: string
+      noDataSubtitle: string
+      noDataCta: string
+    }
+    submit: {
+      formTitle: string
+      salary: string
+      salaryPlaceholder: string
+      yearsOfExperience: string
+      techStack: string
+      techStackPlaceholder: string
+      button: string
+      submitting: string
+      success: string
+      successTitle: string
+      successSubtitle: string
+      error: string
+      anonymous: string
+      cta: string
+      role: string
+      employment: string
+      city: string
+      company: string
+      payment: string
+      selectPlaceholder: string
     }
   }
 }
@@ -46,6 +71,7 @@ export function Calculator({ locale, translations }: CalculatorProps) {
     city: '',
     companyType: '',
     paymentType: 'monthly',
+    techStack: '',
   })
   const [result, setResult] = useState<SalaryResult>(null)
   const [loading, setLoading] = useState(false)
@@ -65,6 +91,7 @@ export function Calculator({ locale, translations }: CalculatorProps) {
       if (filters.city) params.append('city', filters.city)
       if (filters.companyType) params.append('company_type', filters.companyType)
       if (filters.paymentType) params.append('payment_type', filters.paymentType)
+      if (filters.techStack) params.append('tech_stack', filters.techStack)
 
       const response = await fetch(`/api/salaries?${params.toString()}`)
       const data = await response.json()
@@ -90,32 +117,29 @@ export function Calculator({ locale, translations }: CalculatorProps) {
   }
 
   return (
-    <div className="space-y-6">
-      <Card>
-        <CardContent className="pt-6">
-          <Filters
-            locale={locale}
-            filters={filters}
-            onFilterChange={handleFilterChange}
-            translations={translations.filters}
-          />
-        </CardContent>
-      </Card>
+    <div className="space-y-8">
+      <div className="py-6">
+        <BadgeFilters
+          locale={locale}
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          translations={translations.filters}
+        />
+      </div>
 
       {loading ? (
-        <Card>
-          <CardContent className="pt-6">
-            <div className="flex items-center justify-center py-8">
-              <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-            </div>
-          </CardContent>
-        </Card>
+        <div className="py-6">
+          <div className="flex items-center justify-center py-8">
+            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+          </div>
+        </div>
       ) : (
         <SalaryCard
           result={result}
           paymentType={filters.paymentType}
           locale={locale}
           translations={translations.result}
+          submitTranslations={translations.submit}
         />
       )}
     </div>

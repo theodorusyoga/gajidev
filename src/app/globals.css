@@ -123,3 +123,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent;
+  }
+}

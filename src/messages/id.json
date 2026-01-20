@@ -14,6 +14,7 @@
     "city": "Kota",
     "company": "Tipe Perusahaan",
     "payment": "Tipe Pembayaran",
+    "techStack": "Tech Stack",
     "selectPlaceholder": "Pilih..."
   },
   "result": {
@@ -25,13 +26,16 @@
     "perHour": "/jam",
     "basedOn": "Berdasarkan __count__ data dari __sources__",
     "noData": "Tidak ada data untuk filter yang dipilih",
-    "tryAdjusting": "Coba sesuaikan filter untuk melihat hasil"
+    "tryAdjusting": "Coba sesuaikan filter untuk melihat hasil",
+    "noDataTitle": "Pilih filter untuk melihat estimasi gaji",
+    "noDataSubtitle": "Gunakan filter di atas untuk melihat kisaran gaji berdasarkan role, pengalaman, dan lokasi. Atau bantu kami dengan menambahkan data gaji kamu!",
+    "noDataCta": "Bagikan Gaji Kamu"
   },
   "submit": {
     "title": "Bagikan Gaji Kamu",
     "subtitle": "Bantu developer lain dengan membagikan data gaji kamu secara anonim.",
     "cta": "Bagikan Gaji Anonim",
-    "formTitle": "Form Anonim",
+    "formTitle": "Bagikan Gaji Anonim",
     "salary": "Gaji",
     "salaryPlaceholder": "Masukkan gaji dalam Rupiah",
     "yearsOfExperience": "Tahun Pengalaman",
@@ -40,8 +44,16 @@
     "button": "Kirim Data",
     "submitting": "Mengirim...",
     "success": "Terima kasih! Data kamu telah dikirim secara anonim.",
+    "successTitle": "Data Berhasil Dikirim!",
+    "successSubtitle": "Terima kasih telah berkontribusi! Data kamu akan membantu developer lain mendapatkan informasi gaji yang lebih akurat.",
     "error": "Terjadi kesalahan. Silakan coba lagi.",
-    "anonymous": "Data dikirim secara anonim. Kami tidak mengumpulkan data pribadi."
+    "anonymous": "Data dikirim secara anonim. Kami tidak mengumpulkan data pribadi.",
+    "role": "Role",
+    "employment": "Tipe Pekerjaan",
+    "city": "Kota",
+    "company": "Tipe Perusahaan",
+    "payment": "Tipe Pembayaran",
+    "selectPlaceholder": "Pilih..."
   },
   "footer": {
     "sources": "Sumber data: NodeFlair, Glassdoor, Dicoding, Komunitas",

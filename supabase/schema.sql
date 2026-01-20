@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS salary_data (
   payment_type TEXT NOT NULL,
   salary_min BIGINT NOT NULL,
   salary_max BIGINT NOT NULL,
+  tech_stack TEXT[] DEFAULT '{}',
   currency TEXT DEFAULT 'IDR',
   source TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW()
@@ -50,3 +51,5 @@ CREATE INDEX IF NOT EXISTS idx_salary_data_role ON salary_data(role);
 CREATE INDEX IF NOT EXISTS idx_salary_data_experience ON salary_data(experience_level);
 CREATE INDEX IF NOT EXISTS idx_salary_data_city ON salary_data(city);
 CREATE INDEX IF NOT EXISTS idx_salary_data_employment ON salary_data(employment_type);
+CREATE INDEX IF NOT EXISTS idx_salary_data_tech_stack ON salary_data USING GIN(tech_stack);
+CREATE INDEX IF NOT EXISTS idx_submissions_role ON submissions(role);

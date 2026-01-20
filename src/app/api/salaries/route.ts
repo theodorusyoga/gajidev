@@ -10,6 +10,7 @@ export async function GET(request: NextRequest) {
   const city = searchParams.get('city')
   const companyType = searchParams.get('company_type')
   const paymentType = searchParams.get('payment_type')
+  const techStack = searchParams.get('tech_stack')
 
   let query = supabase.from('salary_data').select('*')
 
@@ -30,6 +31,9 @@ export async function GET(request: NextRequest) {
   }
   if (paymentType) {
     query = query.eq('payment_type', paymentType)
+  }
+  if (techStack) {
+    query = query.contains('tech_stack', [techStack])
   }
 
   const { data, error } = await query

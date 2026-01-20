@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Link } from '@/i18n/routing'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
+import { SubmitNavLink } from '@/components/SubmitNavLink'
 import { Footer } from '@/components/Footer'
 import '../globals.css'
 
@@ -62,6 +63,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages()
   const t = await getTranslations({ locale, namespace: 'nav' })
+  const submitT = await getTranslations({ locale, namespace: 'submit' })
   const footerT = await getTranslations({ locale, namespace: 'footer' })
 
   return (
@@ -70,16 +72,39 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           <header className="border-b">
             <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-              <Link href="/" className="text-xl font-bold">
-                Gaji<span className="text-green-500">Dev</span>
+              <Link href="/" className="text-xl font-bold gradient-text">
+                GajiDev
               </Link>
               <nav className="flex items-center gap-4">
                 <Link href="/" className="text-sm hover:text-foreground text-muted-foreground">
                   {t('home')}
                 </Link>
-                <Link href="/submit" className="text-sm hover:text-foreground text-muted-foreground">
-                  {t('submit')}
-                </Link>
+                <SubmitNavLink
+                  label={t('submit')}
+                  locale={locale}
+                  translations={{
+                    formTitle: submitT('formTitle'),
+                    salary: submitT('salary'),
+                    salaryPlaceholder: submitT('salaryPlaceholder'),
+                    yearsOfExperience: submitT('yearsOfExperience'),
+                    techStack: submitT('techStack'),
+                    techStackPlaceholder: submitT('techStackPlaceholder'),
+                    button: submitT('button'),
+                    submitting: submitT('submitting'),
+                    success: submitT('success'),
+                    successTitle: submitT('successTitle'),
+                    successSubtitle: submitT('successSubtitle'),
+                    error: submitT('error'),
+                    anonymous: submitT('anonymous'),
+                    cta: submitT('cta'),
+                    role: submitT('role'),
+                    employment: submitT('employment'),
+                    city: submitT('city'),
+                    company: submitT('company'),
+                    payment: submitT('payment'),
+                    selectPlaceholder: submitT('selectPlaceholder'),
+                  }}
+                />
                 <LanguageSwitcher locale={locale} />
               </nav>
             </div>
