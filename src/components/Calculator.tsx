@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { BadgeFilters } from './BadgeFilters'
 import { SalaryCard } from './SalaryCard'
 import { Loader2 } from 'lucide-react'
+import { event } from '@/lib/analytics'
 
 type SalaryResult = {
   salary_min: number
@@ -114,6 +115,13 @@ export function Calculator({ locale, translations }: CalculatorProps) {
 
   const handleFilterChange = (key: string, value: string) => {
     setFilters((prev) => ({ ...prev, [key]: value }))
+    
+    // Track filter change event
+    event('filter_changed', {
+      filter_type: key,
+      filter_value: value,
+      locale: locale,
+    })
   }
 
   return (

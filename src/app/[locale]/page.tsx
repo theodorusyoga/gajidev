@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { Calculator } from '@/components/Calculator'
 import { SalaryShowcase } from '@/components/SalaryShowcase'
 import { StatisticsBar } from '@/components/StatisticsBar'
+import { AnimatedHeroTitle } from '@/components/AnimatedHeroTitle'
 import { SubmitDialog } from '@/components/SubmitDialog'
 import { HomePageClient } from '@/components/HomePageClient'
 import { Button } from '@/components/ui/button'
@@ -22,9 +23,7 @@ export default async function HomePage({ params }: Props) {
     <HomePageClient>
       <div className="max-w-7xl mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-          {t('title')}
-        </h1>
+        <AnimatedHeroTitle />
         <p className="text-muted-foreground text-lg">
           {t('subtitle')}
         </p>

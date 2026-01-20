@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { ArrowUp, TrendingUp } from 'lucide-react'
 import { formatCurrency } from '@/lib/constants'
+import { event } from '@/lib/analytics'
 
 const percentileGradients = {
   topTier: 'from-emerald-500/60 via-green-500/60 to-teal-500/60',
@@ -84,6 +85,19 @@ export function PercentileComparison({
 
       if (data.percentile !== undefined) {
         setPercentile(data.percentile)
+        
+        // Track percentile comparison event
+        event('percentile_calculated', {
+          role: role,
+          salary: parseInt(userSalary),
+          percentile: data.percentile,
+          payment_type: paymentType,
+          experience_level: filters?.experienceLevel || 'not_set',
+          employment_type: filters?.employmentType || 'not_set',
+          city: filters?.city || 'not_set',
+          company_type: filters?.companyType || 'not_set',
+          tech_stack_count: filters?.techStack?.length || 0,
+        })
       }
     } catch (error) {
       console.error('Error calculating percentile:', error)

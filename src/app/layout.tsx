@@ -1,3 +1,5 @@
+import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+
 export default function RootLayout({
   children,
 }: {
@@ -7,6 +9,7 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <body>
         {children}
+        <GoogleAnalytics />
       </body>
     </html>
   )

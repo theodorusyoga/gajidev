@@ -4,8 +4,20 @@
     "description": "Check developer salaries in Indonesia by role, experience, and location. Data from NodeFlair, Glassdoor, and community."
   },
   "hero": {
-    "title": "How Much Do Developers Earn in Indonesia?",
-    "subtitle": "Check salary estimates based on your role, experience, and location."
+    "title": "Discover Developer Salaries in Indonesia",
+    "subtitle": "Real salary data from various companies and positions",
+    "questions": [
+      "Is my salary enough as a software engineer?",
+      "Is my salary good as a frontend dev?",
+      "Am I paid fairly as a backend dev?",
+      "Is my salary worth it as a fullstack dev?",
+      "Am I underpaid as a mobile dev?",
+      "Is my salary enough as a DevOps engineer?",
+      "Am I paid fairly as a data engineer?",
+      "Is my salary worth it as a QA engineer?",
+      "Am I underpaid as a UI/UX designer?",
+      "Is my salary good as a product manager?"
+    ]
   },
   "filters": {
     "role": "Role",

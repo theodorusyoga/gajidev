@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { MessageCircle, CheckCircle2, AlertCircle } from 'lucide-react'
+import { event } from '@/lib/analytics'
 
 export function FeedbackDialog() {
   const t = useTranslations('feedback')
@@ -53,6 +54,15 @@ export function FeedbackDialog() {
       }
 
       setStatus('success')
+      
+      // Track feedback submission event
+      event('feedback_submitted', {
+        feedback_type: formData.type,
+        has_name: !!formData.name,
+        has_phone: !!formData.phone,
+        description_length: formData.description.length,
+      })
+      
       setFormData({ name: '', email: '', phone: '', type: '', description: '' })
       
       setTimeout(() => {

@@ -4,8 +4,20 @@
     "description": "Cek gaji developer di Indonesia berdasarkan role, pengalaman, dan lokasi. Data dari NodeFlair, Glassdoor, dan komunitas."
   },
   "hero": {
-    "title": "Berapa Gaji Developer di Indonesia?",
-    "subtitle": "Cek estimasi gaji berdasarkan role, pengalaman, dan lokasi kamu."
+    "title": "Cari Tahu Gaji Developer di Indonesia",
+    "subtitle": "Data gaji real dari berbagai perusahaan dan posisi",
+    "questions": [
+      "Duh cukup ga ya gajiku sebagai software engineer?",
+      "Cukup ga ya gajiku sebagai frontend dev?",
+      "Pantas ga sih gajiku sebagai backend dev?",
+      "Worth it ga ya gajiku sebagai fullstack dev?",
+      "Rendah ga ya gajiku sebagai mobile dev?",
+      "Cukup ga ya gajiku sebagai DevOps engineer?",
+      "Pantas ga sih gajiku sebagai data engineer?",
+      "Worth it ga ya gajiku sebagai QA engineer?",
+      "Rendah ga ya gajiku sebagai UI/UX designer?",
+      "Cukup ga ya gajiku sebagai product manager?"
+    ]
   },
   "filters": {
     "role": "Role",
