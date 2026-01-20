@@ -257,13 +257,13 @@ export function SubmitForm({ locale, translations }: SubmitFormProps) {
             <div className="flex flex-wrap gap-2">
               {TECH_STACKS.map((tech) => (
                 <Badge
-                  key={tech}
-                  variant={formData.tech_stack.includes(tech) ? 'default' : 'outline'}
+                  key={tech.value}
+                  variant={formData.tech_stack.includes(tech.value) ? 'default' : 'outline'}
                   className="cursor-pointer"
-                  onClick={() => toggleTechStack(tech)}
+                  onClick={() => toggleTechStack(tech.value)}
                 >
-                  {tech}
-                  {formData.tech_stack.includes(tech) && <X className="h-3 w-3 ml-1" />}
+                  {tech.label}
+                  {formData.tech_stack.includes(tech.value) && <X className="h-3 w-3 ml-1" />}
                 </Badge>
               ))}
             </div>
