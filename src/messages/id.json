@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "GajiDev - Kalkulator Gaji Developer Indonesia",
+    "description": "Cek gaji developer di Indonesia berdasarkan role, pengalaman, dan lokasi. Data dari NodeFlair, Glassdoor, dan komunitas."
+  },
+  "hero": {
+    "title": "Berapa Gaji Developer di Indonesia?",
+    "subtitle": "Cek estimasi gaji berdasarkan role, pengalaman, dan lokasi kamu."
+  },
+  "filters": {
+    "role": "Role",
+    "experience": "Pengalaman",
+    "employment": "Tipe Pekerjaan",
+    "city": "Kota",
+    "company": "Tipe Perusahaan",
+    "payment": "Tipe Pembayaran",
+    "selectPlaceholder": "Pilih..."
+  },
+  "result": {
+    "title": "Estimasi Gaji",
+    "salaryRange": "Kisaran Gaji",
+    "median": "Median",
+    "perMonth": "/bulan",
+    "perYear": "/tahun",
+    "perHour": "/jam",
+    "basedOn": "Berdasarkan __count__ data dari __sources__",
+    "noData": "Tidak ada data untuk filter yang dipilih",
+    "tryAdjusting": "Coba sesuaikan filter untuk melihat hasil"
+  },
+  "submit": {
+    "title": "Bagikan Gaji Kamu",
+    "subtitle": "Bantu developer lain dengan membagikan data gaji kamu secara anonim.",
+    "cta": "Bagikan Gaji Anonim",
+    "formTitle": "Form Anonim",
+    "salary": "Gaji",
+    "salaryPlaceholder": "Masukkan gaji dalam Rupiah",
+    "yearsOfExperience": "Tahun Pengalaman",
+    "techStack": "Tech Stack (opsional)",
+    "techStackPlaceholder": "Pilih tech stack...",
+    "button": "Kirim Data",
+    "submitting": "Mengirim...",
+    "success": "Terima kasih! Data kamu telah dikirim secara anonim.",
+    "error": "Terjadi kesalahan. Silakan coba lagi.",
+    "anonymous": "Data dikirim secara anonim. Kami tidak mengumpulkan data pribadi."
+  },
+  "footer": {
+    "sources": "Sumber data: NodeFlair, Glassdoor, Dicoding, Komunitas",
+    "disclaimer": "Data bersifat estimasi dan dapat berbeda dengan kondisi aktual.",
+    "builtBy": "Dibuat oleh"
+  },
+  "nav": {
+    "home": "Beranda",
+    "submit": "Bagikan Gaji"
+  }
+}

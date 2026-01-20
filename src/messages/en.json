@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "GajiDev - Indonesia Developer Salary Calculator",
+    "description": "Check developer salaries in Indonesia by role, experience, and location. Data from NodeFlair, Glassdoor, and community."
+  },
+  "hero": {
+    "title": "How Much Do Developers Earn in Indonesia?",
+    "subtitle": "Check salary estimates based on your role, experience, and location."
+  },
+  "filters": {
+    "role": "Role",
+    "experience": "Experience",
+    "employment": "Employment Type",
+    "city": "City",
+    "company": "Company Type",
+    "payment": "Payment Type",
+    "selectPlaceholder": "Select..."
+  },
+  "result": {
+    "title": "Salary Estimate",
+    "salaryRange": "Salary Range",
+    "median": "Median",
+    "perMonth": "/month",
+    "perYear": "/year",
+    "perHour": "/hour",
+    "basedOn": "Based on __count__ data points from __sources__",
+    "noData": "No data available for selected filters",
+    "tryAdjusting": "Try adjusting filters to see results"
+  },
+  "submit": {
+    "title": "Share Your Salary",
+    "subtitle": "Help other developers by sharing your salary data anonymously.",
+    "cta": "Share Anonymous Salary",
+    "formTitle": "Anonymous Form",
+    "salary": "Salary",
+    "salaryPlaceholder": "Enter salary in Rupiah",
+    "yearsOfExperience": "Years of Experience",
+    "techStack": "Tech Stack (optional)",
+    "techStackPlaceholder": "Select tech stack...",
+    "button": "Submit Data",
+    "submitting": "Submitting...",
+    "success": "Thank you! Your data has been submitted anonymously.",
+    "error": "An error occurred. Please try again.",
+    "anonymous": "Data is submitted anonymously. We do not collect personal information."
+  },
+  "footer": {
+    "sources": "Data sources: NodeFlair, Glassdoor, Dicoding, Community",
+    "disclaimer": "Data is estimated and may differ from actual conditions.",
+    "builtBy": "Built by"
+  },
+  "nav": {
+    "home": "Home",
+    "submit": "Share Salary"
+  }
+}
