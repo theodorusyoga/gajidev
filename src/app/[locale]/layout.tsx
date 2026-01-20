@@ -105,6 +105,9 @@ export default async function LocaleLayout({ children, params }: Props) {
                     selectPlaceholder: submitT('selectPlaceholder'),
                   }}
                 />
+                <a href="/admin" className="text-sm hover:text-foreground text-muted-foreground" suppressHydrationWarning>
+                  Admin
+                </a>
                 <LanguageSwitcher locale={locale} />
               </nav>
             </div>

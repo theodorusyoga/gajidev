@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { Calculator } from '@/components/Calculator'
 import { SalaryShowcase } from '@/components/SalaryShowcase'
 import { SubmitDialog } from '@/components/SubmitDialog'
+import { HomePageClient } from '@/components/HomePageClient'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 
@@ -17,7 +18,8 @@ export default async function HomePage({ params }: Props) {
   const submitT = await getTranslations('submit')
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <HomePageClient>
+      <div className="max-w-7xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
           {t('title')}
@@ -115,5 +117,6 @@ export default async function HomePage({ params }: Props) {
         </div>
       </div>
     </div>
+    </HomePageClient>
   )
 }
