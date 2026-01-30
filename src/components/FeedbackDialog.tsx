@@ -82,7 +82,7 @@ export function FeedbackDialog() {
             <DialogTrigger asChild>
                 <Button
                     variant="outline"
-                    className="fixed bottom-6 right-42 rounded-full shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 hover:from-purple-600 hover:to-pink-600 z-50 transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-4"
+                    className="fixed bottom-6 right-42 rounded-full shadow-lg bg-gradient-to-r from-green-400 to-emerald-400 text-black border-0 hover:from-green-500 hover:to-emerald-500 z-50 transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-4"
                     size="lg"
                 >
                     <MessageCircle className="h-5 w-5" />
@@ -112,7 +112,7 @@ export function FeedbackDialog() {
                                     placeholder={t('namePlaceholder')}
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="bg-purple-500/10 border-purple-500/30 focus:border-purple-500/50"
+                                    className="bg-green-500/10 border-green-500/30 focus:border-emerald-400/50"
                                 />
                             </div>
 
@@ -126,7 +126,7 @@ export function FeedbackDialog() {
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     required
-                                    className="bg-purple-500/10 border-purple-500/30 focus:border-purple-500/50"
+                                    className="bg-green-500/10 border-green-500/30 focus:border-emerald-400/50"
                                 />
                             </div>
 
@@ -137,7 +137,7 @@ export function FeedbackDialog() {
                                     placeholder={t('phonePlaceholder')}
                                     value={formData.phone}
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                    className="bg-purple-500/10 border-purple-500/30 focus:border-purple-500/50"
+                                    className="bg-green-500/10 border-green-500/30 focus:border-emerald-400/50"
                                 />
                             </div>
 
@@ -150,7 +150,7 @@ export function FeedbackDialog() {
                                     onValueChange={(value) => setFormData({ ...formData, type: value })}
                                     required
                                 >
-                                    <SelectTrigger className="bg-purple-500/10 border-purple-500/30 focus:border-purple-500/50">
+                                    <SelectTrigger className="bg-green-500/10 border-green-500/30 focus:border-emerald-400/50">
                                         <SelectValue placeholder={t('type')} />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -172,7 +172,7 @@ export function FeedbackDialog() {
                                     onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setFormData({ ...formData, description: e.target.value })}
                                     required
                                     rows={5}
-                                    className="bg-purple-500/10 border-purple-500/30 focus:border-purple-500/50 resize-none"
+                                    className="bg-green-500/10 border-green-500/30 focus:border-emerald-400/50 resize-none"
                                 />
                             </div>
 
@@ -186,7 +186,7 @@ export function FeedbackDialog() {
                             <Button
                                 type="submit"
                                 disabled={loading || !formData.email || !formData.type || !formData.description}
-                                className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0"
+                                className="w-full bg-gradient-to-r from-green-400 to-emerald-400 hover:from-green-500 hover:to-emerald-500 text-black border-0"
                             >
                                 {loading ? t('submitting') : t('submit')}
                             </Button>

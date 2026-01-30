@@ -50,7 +50,7 @@ export function ShareSalaryButton({ locale, translations }: ShareSalaryButtonPro
   return (
     <SubmitDialog locale={locale} translations={translations}>
       <Button
-        className="fixed bottom-6 right-6 rounded-full shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 hover:from-purple-600 hover:to-pink-600 z-50 gap-2 transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-4"
+        className="fixed bottom-6 right-6 rounded-full shadow-lg bg-gradient-to-r from-green-400 to-emerald-400 text-black border-0 hover:from-green-500 hover:to-emerald-500 z-50 gap-2 transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-4"
         size="lg"
       >
         {fbT('shareSalary')}
