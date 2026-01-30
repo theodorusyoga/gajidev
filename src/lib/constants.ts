@@ -5,7 +5,7 @@ export const ROLES = [
   { value: 'react-developer', label: { en: 'React Developer', id: 'React Developer' } },
   { value: 'vue-developer', label: { en: 'Vue.js Developer', id: 'Vue.js Developer' } },
   { value: 'angular-developer', label: { en: 'Angular Developer', id: 'Angular Developer' } },
-  
+
   // Backend
   { value: 'backend', label: { en: 'Backend Developer', id: 'Backend Developer' } },
   { value: 'nodejs-developer', label: { en: 'Node.js Developer', id: 'Node.js Developer' } },
@@ -15,19 +15,19 @@ export const ROLES = [
   { value: 'php-developer', label: { en: 'PHP Developer', id: 'PHP Developer' } },
   { value: 'dotnet-developer', label: { en: '.NET Developer', id: '.NET Developer' } },
   { value: 'ruby-developer', label: { en: 'Ruby Developer', id: 'Ruby Developer' } },
-  
+
   // Fullstack
   { value: 'fullstack', label: { en: 'Full Stack Developer', id: 'Full Stack Developer' } },
   { value: 'software-engineer', label: { en: 'Software Engineer', id: 'Software Engineer' } },
   { value: 'web-developer', label: { en: 'Web Developer', id: 'Web Developer' } },
-  
+
   // Mobile
   { value: 'mobile', label: { en: 'Mobile Developer', id: 'Mobile Developer' } },
   { value: 'ios-developer', label: { en: 'iOS Developer', id: 'iOS Developer' } },
   { value: 'android-developer', label: { en: 'Android Developer', id: 'Android Developer' } },
   { value: 'react-native', label: { en: 'React Native Developer', id: 'React Native Developer' } },
   { value: 'flutter-developer', label: { en: 'Flutter Developer', id: 'Flutter Developer' } },
-  
+
   // DevOps & Infrastructure
   { value: 'devops', label: { en: 'DevOps Engineer', id: 'DevOps Engineer' } },
   { value: 'devsecops', label: { en: 'DevSecOps Engineer', id: 'DevSecOps Engineer' } },
@@ -37,7 +37,14 @@ export const ROLES = [
   { value: 'infrastructure', label: { en: 'Infrastructure Engineer', id: 'Infrastructure Engineer' } },
   { value: 'system-admin', label: { en: 'System Administrator', id: 'System Administrator' } },
   { value: 'network-engineer', label: { en: 'Network Engineer', id: 'Network Engineer' } },
-  
+  {
+    value: 'data',
+    label: {
+      en: 'Data Engineer',
+      id: 'Data Engineer'
+    }
+  },
+
   // Data & AI/ML
   { value: 'data-engineer', label: { en: 'Data Engineer', id: 'Data Engineer' } },
   { value: 'data-scientist', label: { en: 'Data Scientist', id: 'Data Scientist' } },
@@ -46,26 +53,26 @@ export const ROLES = [
   { value: 'ai-engineer', label: { en: 'AI Engineer', id: 'AI Engineer' } },
   { value: 'bi-developer', label: { en: 'BI Developer', id: 'BI Developer' } },
   { value: 'analytics-engineer', label: { en: 'Analytics Engineer', id: 'Analytics Engineer' } },
-  
+
   // QA & Testing
   { value: 'qa', label: { en: 'QA Engineer', id: 'QA Engineer' } },
   { value: 'qa-automation', label: { en: 'QA Automation Engineer', id: 'QA Automation Engineer' } },
   { value: 'sdet', label: { en: 'SDET', id: 'SDET' } },
   { value: 'test-engineer', label: { en: 'Test Engineer', id: 'Test Engineer' } },
-  
+
   // Security
   { value: 'security-engineer', label: { en: 'Security Engineer', id: 'Security Engineer' } },
   { value: 'penetration-tester', label: { en: 'Penetration Tester', id: 'Penetration Tester' } },
   { value: 'security-analyst', label: { en: 'Security Analyst', id: 'Security Analyst' } },
-  
+
   // Database
   { value: 'dba', label: { en: 'Database Administrator', id: 'Database Administrator' } },
   { value: 'database-engineer', label: { en: 'Database Engineer', id: 'Database Engineer' } },
-  
+
   // Product & Design
   { value: 'product-engineer', label: { en: 'Product Engineer', id: 'Product Engineer' } },
   { value: 'ux-engineer', label: { en: 'UX Engineer', id: 'UX Engineer' } },
-  
+
   // Management & Leadership
   { value: 'tech-lead', label: { en: 'Tech Lead', id: 'Tech Lead' } },
   { value: 'engineering-manager', label: { en: 'Engineering Manager', id: 'Engineering Manager' } },
@@ -73,7 +80,7 @@ export const ROLES = [
   { value: 'cto', label: { en: 'CTO', id: 'CTO' } },
   { value: 'architect', label: { en: 'Software Architect', id: 'Software Architect' } },
   { value: 'solutions-architect', label: { en: 'Solutions Architect', id: 'Solutions Architect' } },
-  
+
   // Specialized
   { value: 'blockchain', label: { en: 'Blockchain Developer', id: 'Blockchain Developer' } },
   { value: 'embedded', label: { en: 'Embedded Engineer', id: 'Embedded Engineer' } },
@@ -199,7 +206,7 @@ export function formatCurrency(amount: number): string {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(amount)
-  
+
   return formatted
 }
 
@@ -210,6 +217,10 @@ export function getPaymentSuffix(paymentType: string, locale: string): string {
     hourly: { en: '/hour', id: '/jam' },
   }
   return locale === 'id' ? suffixes[paymentType]?.id : suffixes[paymentType]?.en
+}
+
+export function getYearsText(locale: string): string {
+  return locale === 'id' ? 'tahun' : 'years'
 }
 
 export function formatRoleDisplay(roleValue: string): string {

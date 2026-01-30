@@ -24,7 +24,7 @@ export function HomePageClient({ children }: HomePageClientProps) {
   }, [])
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div>
       {showAdminLink && (
         <div className="mb-4 flex justify-end">
           <Link

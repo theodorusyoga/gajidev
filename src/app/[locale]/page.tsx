@@ -20,24 +20,28 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <HomePageClient>
-      <div className="min-h-[calc(100vh-9rem)] flex flex-col justify-center items-center px-4">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-              {t('subtitle')}
-            </h1>
-              <AnimatedHeroTitle />
+      <div className="container mx-auto px-4 py-8">
+        <div className="min-h-[calc(100vh-9rem)] flex flex-col justify-center items-center">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+                {t('subtitle')}
+              </h1>
+                <AnimatedHeroTitle />
+            </div>
+
+            <StatisticsBar />
+
+            <DataSourcesSection />
           </div>
-
-          <StatisticsBar />
-
-          <DataSourcesSection />
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <SalaryShowcase />
+      <div className="py-8">
+        <SalaryShowcase locale={locale} />
+      </div>
 
+      <div className="container mx-auto px-4 py-8">
         <Calculator
         locale={locale}
         translations={{
@@ -113,7 +117,35 @@ export default async function HomePage({ params }: Props) {
           selectPlaceholder: submitT('selectPlaceholder'),
         }}
       />
-    </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-8">
+        <ShareSalaryButton
+        locale={locale}
+        translations={{
+          formTitle: submitT('formTitle'),
+          salary: submitT('salary'),
+          salaryPlaceholder: submitT('salaryPlaceholder'),
+          yearsOfExperience: submitT('yearsOfExperience'),
+          techStack: submitT('techStack'),
+          techStackPlaceholder: submitT('techStackPlaceholder'),
+          button: submitT('button'),
+          submitting: submitT('submitting'),
+          success: submitT('success'),
+          successTitle: submitT('successTitle'),
+          successSubtitle: submitT('successSubtitle'),
+          error: submitT('error'),
+          anonymous: submitT('anonymous'),
+          cta: submitT('cta'),
+          role: submitT('role'),
+          employment: submitT('employment'),
+          city: submitT('city'),
+          company: submitT('company'),
+          payment: submitT('payment'),
+          selectPlaceholder: submitT('selectPlaceholder'),
+        }}
+      />
+      </div>
     </HomePageClient>
   )
 }

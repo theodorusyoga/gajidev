@@ -92,7 +92,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           </nav>
         </div>
       </header>
-      <main className="container mx-auto px-4 py-8">
+      <main>
         {children}
       </main>
       <Footer
