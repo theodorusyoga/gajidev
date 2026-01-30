@@ -6,21 +6,20 @@ import { AdminDashboard } from './AdminDashboard'
 import { useRouter } from 'next/navigation'
 
 export function AdminPageClient() {
-  const [adminToken, setAdminToken] = useState<string | null>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('admin_token')
-    }
-    return null
-  })
+  const [state, setState] = useState<{ token: string | null; isMounted: boolean }>(() => ({
+    token: typeof window?.localStorage !== 'undefined' ? localStorage.getItem('admin_token') : null,
+    isMounted: true,
+  }))
   const router = useRouter()
 
-  if (adminToken) {
+  // Don't render AdminDashboard until after hydration to prevent mismatch
+  if (state.token && state.isMounted) {
     return (
       <AdminDashboard
-        token={adminToken}
+        token={state.token}
         onLogout={() => {
           localStorage.removeItem('admin_token')
-          setAdminToken(null)
+          setState({ token: null, isMounted: true })
           router.push('/admin')
         }}
       />
@@ -38,7 +37,7 @@ export function AdminPageClient() {
         <div className="max-w-md mx-auto">
           <div className="bg-gradient-to-br from-green-950/50 via-background to-emerald-950/30 border border-green-500/20 rounded-lg p-8">
             <AdminLogin onLoginSuccess={(token) => {
-              setAdminToken(token)
+              setState({ token, isMounted: true })
             }} />
           </div>
         </div>

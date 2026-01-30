@@ -243,7 +243,10 @@ export function formatCityDisplay(cityValue: string): string {
     return typeof label === 'string' ? label : label.en
   }
   // Fallback: Title Case
-  return cityValue.charAt(0).toUpperCase() + cityValue.slice(1)
+  if (cityValue) {
+    return cityValue.charAt(0).toUpperCase() + cityValue.slice(1)
+  }
+  return ''
 }
 
 export function formatEmploymentTypeDisplay(employmentValue: string): string {

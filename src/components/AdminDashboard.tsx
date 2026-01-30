@@ -18,9 +18,9 @@ import {
   Eye,
   LogOut,
 } from 'lucide-react'
-import { 
-  formatCurrency, 
-  formatRoleDisplay, 
+import {
+  formatCurrency,
+  formatRoleDisplay,
   formatTechStackDisplay,
   formatCityDisplay,
   formatEmploymentTypeDisplay,
