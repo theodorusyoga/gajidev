@@ -11,12 +11,17 @@ type HomePageClientProps = {
 
 export function HomePageClient({ children }: HomePageClientProps) {
   const searchParams = useSearchParams()
-  const [showAdminLink, setShowAdminLink] = useState(false)
+  const showAdminLink = searchParams.get('admin') === 'true'
+  const [showFloatingButtons, setShowFloatingButtons] = useState(false)
 
   useEffect(() => {
-    const showAdmin = searchParams.get('admin') === 'true'
-    setShowAdminLink(showAdmin)
-  }, [searchParams])
+    const handleScroll = () => {
+      setShowFloatingButtons(window.scrollY > 100)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -31,7 +36,7 @@ export function HomePageClient({ children }: HomePageClientProps) {
         </div>
       )}
       {children}
-      <FeedbackDialog />
+      {showFloatingButtons && <FeedbackDialog />}
     </div>
   )
 }

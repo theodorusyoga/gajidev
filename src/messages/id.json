@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Cari Tahu Gaji Developer di Indonesia",
-    "subtitle": "Data gaji real dari berbagai perusahaan dan posisi",
+    "subtitle": "Data gaji real dari berbagai posisi dan pengalaman",
     "questions": [
       "Duh cukup ga ya gajiku sebagai software engineer?",
       "Cukup ga ya gajiku sebagai frontend dev?",
@@ -132,5 +132,18 @@
     "salaries": "Data Gaji",
     "roles": "Role Pekerjaan",
     "comparisons": "Perbandingan Gaji"
+  },
+  "dataSources": {
+    "title": "Sumber Data Terpercaya",
+    "description": "Data gaji dikumpulkan dari berbagai sumber untuk memberikan informasi yang akurat",
+    "nodeflair": "NodeFlair",
+    "nodeflairDesc": "Platform pencarian kerja tech di Asia",
+    "glassdoor": "Glassdoor",
+    "glassdoorDesc": "Database gaji global yang terverifikasi",
+    "community": "Komunitas",
+    "communityDesc": "Kontribusi langsung dari developer Indonesia"
+  },
+  "floatingButton": {
+    "shareSalary": "Bagikan Gaji"
   }
 }

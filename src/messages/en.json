@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Discover Developer Salaries in Indonesia",
-    "subtitle": "Real salary data from various companies and positions",
+    "subtitle": "Real salary data from various positions and experience levels",
     "questions": [
       "Is my salary enough as a software engineer?",
       "Is my salary good as a frontend dev?",
@@ -132,5 +132,18 @@
     "salaries": "Salary Data Points",
     "roles": "Job Roles",
     "comparisons": "Salary Comparisons"
+  },
+  "dataSources": {
+    "title": "Trusted Data Sources",
+    "description": "Salary data collected from multiple sources to provide accurate information",
+    "nodeflair": "NodeFlair",
+    "nodeflairDesc": "Tech job platform across Asia",
+    "glassdoor": "Glassdoor",
+    "glassdoorDesc": "Verified global salary database",
+    "community": "Community",
+    "communityDesc": "Direct contributions from Indonesian developers"
+  },
+  "floatingButton": {
+    "shareSalary": "Share Salary"
   }
 }

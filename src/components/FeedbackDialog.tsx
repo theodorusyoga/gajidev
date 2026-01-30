@@ -14,6 +14,12 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -78,17 +84,24 @@ export function FeedbackDialog() {
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          className="fixed bottom-6 right-6 rounded-full shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 hover:from-purple-600 hover:to-pink-600 z-50"
-          size="lg"
-        >
-          <MessageCircle className="h-5 w-5 mr-2" />
-          {t('button')}
-        </Button>
-      </DialogTrigger>
+    <TooltipProvider>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <Tooltip delayDuration={0}>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                className="fixed bottom-6 right-42 rounded-full shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 hover:from-purple-600 hover:to-pink-600 z-50 transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-4"
+                size="lg"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="top">
+              <p>{t('button')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl gradient-text">{t('title')}</DialogTitle>
@@ -195,5 +208,6 @@ export function FeedbackDialog() {
         )}
       </DialogContent>
     </Dialog>
+    </TooltipProvider>
   )
 }

@@ -40,7 +40,7 @@ export function AnimatedHeroTitle() {
   }, [displayedText, isTyping, currentQuestionIndex, questions, typingSpeed])
 
   return (
-    <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text min-h-[2.5rem] md:min-h-[3rem]">
+    <h1 className="text-lg md:text-xl text-muted-foreground mb-4 min-h-[2rem] md:min-h-[2.5rem]">
       {displayedText}
       {isTyping && displayedText.length > 0 && (
         <span className="typing-cursor">|</span>

@@ -69,7 +69,7 @@ export function SalaryCard({ result, paymentType, locale, role, filters, transla
 
   if (!result) {
     return (
-      <div className="py-12">
+      <div>
         <div className="max-w-xl mx-auto text-center bg-gradient-to-b from-purple-950/30 to-transparent rounded-3xl p-8 border border-purple-500/10">
           <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
             <Filter className="h-8 w-8 text-purple-400" />

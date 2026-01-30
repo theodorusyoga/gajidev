@@ -2,11 +2,10 @@ import { getTranslations } from 'next-intl/server'
 import { Calculator } from '@/components/Calculator'
 import { SalaryShowcase } from '@/components/SalaryShowcase'
 import { StatisticsBar } from '@/components/StatisticsBar'
+import { DataSourcesSection } from '@/components/DataSourcesSection'
 import { AnimatedHeroTitle } from '@/components/AnimatedHeroTitle'
-import { SubmitDialog } from '@/components/SubmitDialog'
+import { ShareSalaryButton } from '@/components/ShareSalaryButton'
 import { HomePageClient } from '@/components/HomePageClient'
-import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -21,19 +20,25 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <HomePageClient>
-      <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-8">
-        <AnimatedHeroTitle />
-        <p className="text-muted-foreground text-lg">
-          {t('subtitle')}
-        </p>
+      <div className="min-h-[calc(100vh-9rem)] flex flex-col justify-center items-center px-4">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+              {t('subtitle')}
+            </h1>
+              <AnimatedHeroTitle />
+          </div>
+
+          <StatisticsBar />
+
+          <DataSourcesSection />
+        </div>
       </div>
 
-      <StatisticsBar />
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <SalaryShowcase />
 
-      <SalaryShowcase />
-
-      <Calculator
+        <Calculator
         locale={locale}
         translations={{
           filters: {
@@ -83,42 +88,31 @@ export default async function HomePage({ params }: Props) {
         }}
       />
 
-      <div className="mt-12 text-center">
-        <div className="inline-block p-8 rounded-3xl bg-gradient-to-br from-purple-950/30 to-pink-950/20 border border-purple-500/10">
-          <h2 className="text-xl font-bold mb-3 gradient-text">{submitT('title')}</h2>
-          <p className="text-muted-foreground text-sm mb-6 max-w-md">{submitT('subtitle')}</p>
-          <SubmitDialog
-            locale={locale}
-            translations={{
-              formTitle: submitT('formTitle'),
-              salary: submitT('salary'),
-              salaryPlaceholder: submitT('salaryPlaceholder'),
-              yearsOfExperience: submitT('yearsOfExperience'),
-              techStack: submitT('techStack'),
-              techStackPlaceholder: submitT('techStackPlaceholder'),
-              button: submitT('button'),
-              submitting: submitT('submitting'),
-              success: submitT('success'),
-              successTitle: submitT('successTitle'),
-              successSubtitle: submitT('successSubtitle'),
-              error: submitT('error'),
-              anonymous: submitT('anonymous'),
-              cta: submitT('cta'),
-              role: submitT('role'),
-              employment: submitT('employment'),
-              city: submitT('city'),
-              company: submitT('company'),
-              payment: submitT('payment'),
-              selectPlaceholder: submitT('selectPlaceholder'),
-            }}
-          >
-            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 gap-2">
-              {submitT('cta')}
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </SubmitDialog>
-        </div>
-      </div>
+      <ShareSalaryButton
+        locale={locale}
+        translations={{
+          formTitle: submitT('formTitle'),
+          salary: submitT('salary'),
+          salaryPlaceholder: submitT('salaryPlaceholder'),
+          yearsOfExperience: submitT('yearsOfExperience'),
+          techStack: submitT('techStack'),
+          techStackPlaceholder: submitT('techStackPlaceholder'),
+          button: submitT('button'),
+          submitting: submitT('submitting'),
+          success: submitT('success'),
+          successTitle: submitT('successTitle'),
+          successSubtitle: submitT('successSubtitle'),
+          error: submitT('error'),
+          anonymous: submitT('anonymous'),
+          cta: submitT('cta'),
+          role: submitT('role'),
+          employment: submitT('employment'),
+          city: submitT('city'),
+          company: submitT('company'),
+          payment: submitT('payment'),
+          selectPlaceholder: submitT('selectPlaceholder'),
+        }}
+      />
     </div>
     </HomePageClient>
   )
