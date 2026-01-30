@@ -36,7 +36,7 @@ export function AdminPageClient() {
         </div>
         
         <div className="max-w-md mx-auto">
-          <div className="bg-gradient-to-br from-purple-950/50 via-background to-pink-950/30 border border-purple-500/20 rounded-lg p-8">
+          <div className="bg-gradient-to-br from-green-950/50 via-background to-emerald-950/30 border border-green-500/20 rounded-lg p-8">
             <AdminLogin onLoginSuccess={(token) => {
               setAdminToken(token)
             }} />

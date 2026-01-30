@@ -70,16 +70,16 @@ export function SalaryCard({ result, paymentType, locale, role, filters, transla
   if (!result) {
     return (
       <div>
-        <div className="max-w-xl mx-auto text-center bg-gradient-to-b from-purple-950/30 to-transparent rounded-3xl p-8 border border-purple-500/10">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-            <Filter className="h-8 w-8 text-purple-400" />
+        <div className="max-w-xl mx-auto text-center bg-gradient-to-b from-green-950/30 to-transparent rounded-3xl p-8 border border-green-500/10">
+          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
+            <Filter className="h-8 w-8 text-green-600" />
           </div>
           <h3 className="text-2xl font-bold mb-3 gradient-text">{translations.noDataTitle}</h3>
           <p className="text-muted-foreground mb-6 max-w-md mx-auto">
             {translations.noDataSubtitle}
           </p>
           <SubmitDialog locale={locale} translations={submitTranslations}>
-            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 gap-2">
+            <Button className="bg-gradient-to-r from-green-400 to-emerald-400 hover:from-green-500 hover:to-emerald-500 text-black border-0 gap-2">
               {translations.noDataCta}
               <ArrowRight className="h-4 w-4" />
             </Button>
@@ -92,13 +92,13 @@ export function SalaryCard({ result, paymentType, locale, role, filters, transla
   return (
     <div className="py-8">
       <div className="max-w-2xl mx-auto">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-950/50 via-background to-pink-950/30 border border-purple-500/20 p-8">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-500/10 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-pink-500/10 to-transparent rounded-full blur-3xl" />
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-950/50 via-background to-emerald-950/30 border border-green-500/20 p-8">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-green-500/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-full blur-3xl" />
           
           <div className="relative z-10">
             <div className="flex items-center justify-center gap-2 mb-6">
-              <Sparkles className="h-5 w-5 text-purple-400" />
+              <Sparkles className="h-5 w-5 text-green-600" />
               <h2 className="text-xl font-bold gradient-text">{translations.title}</h2>
             </div>
             
@@ -117,7 +117,7 @@ export function SalaryCard({ result, paymentType, locale, role, filters, transla
                 </div>
               </div>
 
-              <div className="space-y-2 pt-4 border-t border-purple-500/10">
+              <div className="space-y-2 pt-4 border-t border-green-500/10">
                 <p className="text-sm text-muted-foreground">{translations.median}</p>
                 <div className="flex items-baseline justify-center gap-2">
                   <span className="text-4xl md:text-5xl font-bold gradient-text">
@@ -135,7 +135,7 @@ export function SalaryCard({ result, paymentType, locale, role, filters, transla
                 </p>
                 <div className="flex gap-2 justify-center flex-wrap">
                   {result.sources.split(', ').map((source) => (
-                    <Badge key={source} variant="outline" className="text-xs border-purple-500/30 text-purple-300">
+                    <Badge key={source} variant="outline" className="text-xs border-green-500/30 text-green-300">
                       {source}
                     </Badge>
                   ))}
@@ -145,10 +145,10 @@ export function SalaryCard({ result, paymentType, locale, role, filters, transla
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-purple-500/20 space-y-8">
+        <div className="mt-8 pt-8 border-t border-green-500/20 space-y-8">
           <SalaryDistribution role={role} paymentType={paymentType} />
           
-          <div className="border-t border-purple-500/20 pt-8">
+          <div className="border-t border-green-500/20 pt-8">
             <PercentileComparison
               role={role}
               paymentType={paymentType}

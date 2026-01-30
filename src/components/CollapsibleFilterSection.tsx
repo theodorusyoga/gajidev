@@ -26,14 +26,14 @@ export function CollapsibleFilterSection({
     <div className="space-y-3">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg hover:bg-purple-500/10 transition-colors"
+        className="w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg hover:bg-green-500/10 transition-colors"
       >
         <div className="flex items-center gap-2">
-          <Icon className="h-4 w-4 text-purple-400" />
+          <Icon className="h-4 w-4 text-green-600" />
           <div className="flex items-center gap-2">
             <h3 className="text-sm font-semibold gradient-text">{title}</h3>
             {activeCount > 0 && (
-              <span className="text-xs bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full">
+              <span className="text-xs bg-green-500/20 text-green-300 px-2 py-0.5 rounded-full">
                 {activeCount}
               </span>
             )}
@@ -43,7 +43,7 @@ export function CollapsibleFilterSection({
           </div>
         </div>
         <ChevronDown
-          className={`h-4 w-4 text-purple-400 transition-transform duration-200 ${
+          className={`h-4 w-4 text-green-600 transition-transform duration-200 ${
             isExpanded ? 'rotate-180' : ''
           }`}
         />

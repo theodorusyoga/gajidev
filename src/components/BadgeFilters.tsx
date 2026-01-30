@@ -54,8 +54,8 @@ function FilterBadge({
         inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium
         transition-all duration-200 border
         ${selected
-          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-transparent shadow-lg shadow-purple-500/25'
-          : 'bg-background border-border hover:border-purple-500/50 hover:bg-purple-500/10 text-foreground'
+          ? 'bg-gradient-to-r from-green-400 to-emerald-400 text-black border-transparent shadow-lg shadow-green-400/25'
+          : 'bg-background border-border hover:border-green-500/50 hover:bg-green-500/10 text-foreground'
         }
       `}
     >
@@ -79,7 +79,7 @@ function FilterSection({
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-purple-400" />
+        <Icon className="h-4 w-4 text-green-600" />
         <h3 className="text-sm font-semibold gradient-text">{title}</h3>
         {
           subtitle &&
@@ -112,7 +112,7 @@ export function BadgeFilters({ locale, filters, onFilterChange, translations }: 
       {/* Role - Always visible */}
       <div className="space-y-4">
         <div className="flex items-center gap-2">
-          <Code2 className="h-4 w-4 text-purple-400" />
+          <Code2 className="h-4 w-4 text-green-600" />
           <h3 className="text-sm font-semibold gradient-text">{translations.role}</h3>
         </div>
         <div className="flex flex-wrap gap-2">

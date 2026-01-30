@@ -11,8 +11,8 @@ import { event } from '@/lib/analytics'
 const percentileGradients = {
   topTier: 'from-emerald-500/60 via-green-500/60 to-teal-500/60',
   aboveAverage: 'from-cyan-500/60 via-blue-500/60 to-indigo-500/60',
-  aroundAverage: 'from-amber-500/60 via-yellow-500/60 to-orange-500/60',
-  belowAverage: 'from-orange-500/60 via-red-500/60 to-rose-500/60',
+  aroundAverage: 'from-green-500/60 via-emerald-500/60 to-teal-500/60',
+  belowAverage: 'from-emerald-500/60 via-green-500/60 to-lime-500/60',
 }
 
 type PercentileComparisonProps = {
@@ -142,12 +142,12 @@ export function PercentileComparison({
               placeholder="e.g., 15.000.000"
               value={displaySalary}
               onChange={handleSalaryChange}
-              className="flex-1 bg-purple-500/10 border-purple-500/30 focus:border-purple-500/50"
+              className="flex-1 bg-green-500/10 border-green-500/30 focus:border-emerald-500/50"
             />
             <Button
               onClick={handleCalculate}
               disabled={!userSalary || loading}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0"
+              className="bg-gradient-to-r from-green-400 to-emerald-400 hover:from-green-500 hover:to-emerald-500 text-black border-0"
             >
               {loading ? t('buttonLoading') : t('button')}
             </Button>
@@ -155,7 +155,7 @@ export function PercentileComparison({
         </div>
 
         {percentile !== null && (
-          <div className="space-y-3 pt-4 border-t border-purple-500/20">
+          <div className="space-y-3 pt-4 border-t border-green-500/20">
             <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${getPercentileColor(percentile)} p-6 shadow-lg`}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-16 -mt-16" />
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-2xl -ml-12 -mb-12" />
@@ -176,7 +176,7 @@ export function PercentileComparison({
               </div>
             </div>
 
-            <div className="space-y-3 bg-purple-500/5 rounded-xl p-4 border border-purple-500/10">
+            <div className="space-y-3 bg-green-500/5 rounded-xl p-4 border border-green-500/10">
               <p className="text-sm text-muted-foreground">
                 {t('message')
                   .replace('__salary__', formatCurrency(parseInt(userSalary)))
@@ -192,11 +192,11 @@ export function PercentileComparison({
             </div>
 
             <div className="grid grid-cols-3 gap-2 text-xs">
-              <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-lg p-3 border border-purple-500/20">
+              <div className="bg-gradient-to-br from-green-500/20 to-green-500/5 rounded-lg p-3 border border-green-500/20">
                 <p className="text-muted-foreground text-xs mb-1">{t('min')}</p>
                 <p className="font-bold text-foreground">{formatCurrency(salaryMin)}</p>
               </div>
-              <div className="bg-gradient-to-br from-pink-500/20 to-pink-500/5 rounded-lg p-3 border border-pink-500/20">
+              <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 rounded-lg p-3 border border-emerald-500/20">
                 <p className="text-muted-foreground text-xs mb-1">{t('yourSalary')}</p>
                 <p className="font-bold text-foreground">{formatCurrency(parseInt(userSalary))}</p>
               </div>

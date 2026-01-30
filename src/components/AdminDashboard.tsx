@@ -175,7 +175,7 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
     if (submission.is_suspicious) {
       return <Badge className="bg-red-500/20 text-red-400 border-red-500/30">Suspicious</Badge>
     }
-    return <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30">Pending</Badge>
+    return <Badge className="bg-green-500/20 text-green-400 border-green-500/30">Pending</Badge>
   }
 
   return (
@@ -189,7 +189,7 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
           <Button
             variant="outline"
             onClick={onLogout}
-            className="gap-2 border-purple-500/30 hover:bg-red-500/10"
+            className="gap-2 border-green-500/30 hover:bg-red-500/10"
           >
             <LogOut className="h-4 w-4" />
             Logout
@@ -202,7 +202,7 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
               key={f}
               variant={filter === f ? 'default' : 'outline'}
               onClick={() => setFilter(f)}
-              className={filter === f ? 'bg-gradient-to-r from-purple-500 to-pink-500' : ''}
+              className={filter === f ? 'bg-gradient-to-r from-green-400 to-emerald-400 text-black' : ''}
             >
               {f === 'all' && 'All Submissions'}
               {f === 'pending' && 'Pending'}
@@ -224,7 +224,7 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
             {submissions.map((submission) => (
               <div
                 key={submission.id}
-                className="p-4 rounded-lg border border-purple-500/20 bg-purple-500/5 hover:bg-purple-500/10 transition-colors"
+                className="p-4 rounded-lg border border-green-500/20 bg-green-500/5 hover:bg-green-500/10 transition-colors"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 space-y-2">
@@ -339,7 +339,7 @@ export function AdminDashboard({ token, onLogout }: AdminDashboardProps) {
                       placeholder="Reason for suspicion..."
                       value={suspiciousReason}
                       onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setSuspiciousReason(e.target.value)}
-                      className="text-sm w-full px-3 py-2 rounded-md border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="text-sm w-full px-3 py-2 rounded-md border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
 

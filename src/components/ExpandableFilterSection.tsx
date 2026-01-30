@@ -24,17 +24,17 @@ export function ExpandableFilterSection({
     <div className="space-y-4">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between gap-2 p-3 rounded-lg bg-purple-500/5 hover:bg-purple-500/10 border border-purple-500/20 transition-all"
+        className="w-full flex items-center justify-between gap-2 p-3 rounded-lg bg-green-500/5 hover:bg-green-500/10 border border-green-500/20 transition-all"
       >
         <div className="flex items-center gap-2">
-          <Icon className="h-4 w-4 text-purple-400" />
+          <Icon className="h-4 w-4 text-green-600" />
           <h3 className="text-sm font-semibold gradient-text">{title}</h3>
           {itemCount && (
             <span className="text-xs text-muted-foreground ml-2">({itemCount})</span>
           )}
         </div>
         <ChevronDown
-          className={`h-4 w-4 text-purple-400 transition-transform duration-200 ${
+          className={`h-4 w-4 text-green-600 transition-transform duration-200 ${
             isExpanded ? 'rotate-180' : ''
           }`}
         />

@@ -35,14 +35,14 @@ export function SalaryShowcase() {
         {[...sampleSalaries, ...sampleSalaries, ...sampleSalaries].map((salary, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-80 p-4 rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-950/20 to-pink-950/10 backdrop-blur-sm"
+            className="flex-shrink-0 w-80 p-4 rounded-2xl border border-green-500/20 bg-gradient-to-br from-green-950/20 to-emerald-950/10 backdrop-blur-sm"
           >
             <div className="flex items-start justify-between mb-2">
               <div>
                 <h3 className="font-semibold text-sm">{salary.role}</h3>
                 <p className="text-xs text-muted-foreground">{salary.level} • {salary.city}</p>
               </div>
-              <TrendingUp className="h-4 w-4 text-purple-400" />
+              <TrendingUp className="h-4 w-4 text-green-600" />
             </div>
             <div className="mt-3">
               <p className="text-xs text-muted-foreground mb-1">Salary Range</p>

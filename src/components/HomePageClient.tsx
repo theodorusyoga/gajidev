@@ -29,7 +29,7 @@ export function HomePageClient({ children }: HomePageClientProps) {
         <div className="mb-4 flex justify-end">
           <Link
             href="/admin"
-            className="text-sm text-purple-400 hover:text-purple-300 underline"
+            className="text-sm text-green-600 hover:text-green-500 underline"
           >
             Admin Dashboard
           </Link>
