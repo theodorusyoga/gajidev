@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 
 export function AdminPageClient() {
   const [state, setState] = useState<{ token: string | null; isMounted: boolean }>(() => ({
-    token: typeof window?.localStorage !== 'undefined' ? localStorage.getItem('admin_token') : null,
+    token: typeof window !== 'undefined' ? (typeof window?.localStorage !== 'undefined' ? localStorage.getItem('admin_token') : null) : null,
     isMounted: true,
   }))
   const router = useRouter()
