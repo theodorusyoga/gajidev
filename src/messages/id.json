@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "GajiDev - Kalkulator Gaji Developer Indonesia",
-    "description": "Cek gaji developer di Indonesia berdasarkan role, pengalaman, dan lokasi. Data dari NodeFlair, Glassdoor, dan komunitas."
+    "title": "GajiDev - Gaji Developer Indonesia | Gaji Engineer & Salary Dev Indonesia",
+    "description": "Cek gaji developer, gaji engineer, gaji programmer, dan salary dev di Indonesia. Data gaji software developer, frontend dev, backend dev, fullstack engineer dari berbagai sumber terpercaya."
   },
   "hero": {
-    "title": "Cari Tahu Gaji Developer di Indonesia",
-    "subtitle": "Data gaji real dari berbagai posisi dan pengalaman",
+    "title": "Gaji Developer Indonesia - Gaji Engineer & Salary Dev",
+    "subtitle": "Data gaji developer real dari berbagai posisi dan level pengalaman",
     "questions": [
       "Duh cukup ga ya gajiku sebagai software engineer?",
       "Cukup ga ya gajiku sebagai frontend dev?",

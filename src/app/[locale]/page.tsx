@@ -37,11 +37,11 @@ export default async function HomePage({ params }: Props) {
         </div>
       </div>
 
-      <div className="py-8">
+      <div>
         <SalaryShowcase locale={locale} />
       </div>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4">
         <Calculator
         locale={locale}
         translations={{
