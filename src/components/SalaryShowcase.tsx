@@ -20,7 +20,7 @@ type SalaryShowcaseProps = {
 
 export function SalaryShowcase({ locale = 'en' }: SalaryShowcaseProps) {
   return (
-    <div className="relative overflow-hidden py-8 mb-8">
+    <div className="relative overflow-hidden">
       <motion.div
         className="flex gap-4"
         animate={{

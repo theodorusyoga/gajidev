@@ -20,7 +20,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t('title'),
     description: t('description'),
-    keywords: ['gaji developer', 'gaji programmer indonesia', 'kalkulator gaji', 'salary developer', 'developer salary indonesia'],
+    keywords: [
+      'gaji developer',
+      'gaji developer indonesia',
+      'gaji engineer',
+      'gaji engineer indonesia',
+      'gaji dev',
+      'salary developer',
+      'salary developer indonesia',
+      'salary engineer',
+      'salary engineer indonesia',
+      'salary dev',
+      'gaji programmer',
+      'gaji programmer indonesia',
+      'gaji software engineer',
+      'gaji frontend developer',
+      'gaji backend developer',
+      'gaji fullstack developer',
+      'gaji mobile developer',
+      'gaji devops engineer',
+      'gaji data engineer'
+    ],
     openGraph: {
       title: t('title'),
       description: t('description'),
@@ -53,9 +73,37 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = await getTranslations({ locale, namespace: 'nav' })
   const submitT = await getTranslations({ locale, namespace: 'submit' })
   const footerT = await getTranslations({ locale, namespace: 'footer' })
+  const metaT = await getTranslations({ locale, namespace: 'meta' })
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'GajiDev',
+    description: metaT('description'),
+    url: 'https://gaji.dev',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://gaji.dev?role={search_term_string}'
+      },
+      'query-input': 'required name=search_term_string'
+    },
+    about: {
+      '@type': 'Thing',
+      name: locale === 'id' ? 'Gaji Developer Indonesia' : 'Developer Salary Indonesia',
+      description: locale === 'id' 
+        ? 'Informasi gaji developer, gaji engineer, dan salary dev di Indonesia'
+        : 'Information about developer salary, engineer salary, and dev salary in Indonesia'
+    }
+  }
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <header className="border-b">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="text-xl font-bold gradient-text">
