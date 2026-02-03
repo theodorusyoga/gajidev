@@ -28,6 +28,7 @@ import {
   TECH_STACKS,
   getLabel,
 } from '@/lib/constants'
+import { Badge } from '@/components/ui/badge'
 import { Sparkles, Lock, X, ChevronDown } from 'lucide-react'
 
 type SubmitDialogProps = {
@@ -311,9 +312,14 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="salary" className="gradient-text font-semibold">
-                {translations.salary} *
-              </Label>
+              <div className="flex items-center justify-between gap-2">
+                <Label htmlFor="salary" className="gradient-text font-semibold">
+                  {translations.salary} *
+                </Label>
+                <Badge variant="outline" className="text-xs border-green-500/30 text-green-300 bg-green-500/5">
+                  {locale === 'id' ? 'Gaji Bersih' : 'Net Salary'}
+                </Badge>
+              </div>
               <Input
                 id="salary"
                 type="text"
