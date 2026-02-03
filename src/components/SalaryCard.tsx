@@ -104,7 +104,12 @@ export function SalaryCard({ result, paymentType, locale, role, filters, transla
             
             <div className="text-center space-y-6">
               <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">{translations.salaryRange}</p>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <p className="text-sm text-muted-foreground">{translations.salaryRange}</p>
+                  <Badge variant="outline" className="text-xs border-green-500/30 text-green-300 bg-green-500/5">
+                    {locale === 'id' ? 'Gaji Bersih' : 'Net Salary'}
+                  </Badge>
+                </div>
                 <div className="flex items-baseline justify-center gap-3 flex-wrap">
                   <span className="text-3xl md:text-4xl font-bold gradient-text">
                     {formatCurrency(result.salary_min)}

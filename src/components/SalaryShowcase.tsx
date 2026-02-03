@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Badge } from '@/components/ui/badge'
 import { formatCurrency, getLabel, formatTechStackDisplay, getPaymentSuffix, getYearsText, ROLES, EMPLOYMENT_TYPES, CITIES, COMPANY_TYPES } from '@/lib/constants'
 
 const sampleSubmissions = [
@@ -51,8 +52,11 @@ export function SalaryShowcase({ locale = 'en' }: SalaryShowcaseProps) {
               className="flex-shrink-0 w-90 p-4 rounded-2xl border border-green-500/20 bg-gradient-to-br from-green-950/20 to-emerald-950/10 backdrop-blur-sm"
             >
               <div className="space-y-3">
-                <div>
+                <div className="flex items-center justify-between gap-2">
                   <h3 className="font-semibold text-sm">{roleLabel} • {submission.years_of_experience} {yearsText}</h3>
+                  <Badge variant="outline" className="text-xs border-green-500/30 text-green-300 bg-green-500/5 flex-shrink-0">
+                    {locale === 'id' ? 'Bersih' : 'Net'}
+                  </Badge>
                 </div>
 
                 <div>

@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Badge } from '@/components/ui/badge'
 import { ArrowUp, TrendingUp } from 'lucide-react'
 import { formatCurrency } from '@/lib/constants'
 import { event } from '@/lib/analytics'
@@ -36,6 +37,7 @@ export function PercentileComparison({
   salaryMax,
   filters,
 }: PercentileComparisonProps) {
+  const locale = useLocale()
   const t = useTranslations('percentile')
   const tLabel = useTranslations()
   const [userSalary, setUserSalary] = useState('')
@@ -129,7 +131,12 @@ export function PercentileComparison({
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold gradient-text">{t('title')}</h3>
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold gradient-text">{t('title')}</h3>
+        <Badge variant="outline" className="text-xs border-green-500/30 text-green-300 bg-green-500/5">
+          {locale === 'id' ? 'Gaji Bersih' : 'Net Salary'}
+        </Badge>
+      </div>
 
       <div className="space-y-3">
         <div className="space-y-2">

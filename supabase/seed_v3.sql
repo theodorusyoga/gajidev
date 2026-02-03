@@ -1,6 +1,7 @@
 -- GajiDev Seed Data v3 - Expanded with 500+ entries
 -- Based on data from NodeFlair, Glassdoor, LinkedIn, Indeed, Levels.fyi, Tech in Asia
 -- Last updated: January 2025
+-- NOTE: All salary values are NET SALARY (after tax and deductions)
 
 INSERT INTO salary_data (role, experience_level, employment_type, city, company_type, payment_type, salary_min, salary_max, tech_stack, source) VALUES
 
