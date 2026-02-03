@@ -28,6 +28,7 @@ import {
   TECH_STACKS,
   getLabel,
 } from '@/lib/constants'
+import { Badge } from '@/components/ui/badge'
 import { Sparkles, Lock, X, ChevronDown } from 'lucide-react'
 
 type SubmitDialogProps = {
@@ -121,10 +122,10 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto from-purple-950/50 via-background to-pink-950/30 border-purple-500/20">
+      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto from-green-950/50 via-background to-emerald-950/30 border-green-500/20">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-2xl">
-            <Sparkles className="h-6 w-6 text-purple-400" />
+            <Sparkles className="h-6 w-6 text-green-600" />
             <span className="gradient-text">{translations.formTitle}</span>
           </DialogTitle>
           <DialogDescription className="flex items-center gap-2 text-muted-foreground">
@@ -135,7 +136,7 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
 
         {status === 'success' ? (
           <div className="py-12 text-center">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center animate-pulse">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center animate-pulse">
               <Sparkles className="h-10 w-10 text-white" />
             </div>
             <h3 className="text-2xl font-bold mb-3 gradient-text">{translations.successTitle}</h3>
@@ -154,16 +155,16 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                 >
                   <SelectTrigger 
                     id="submit-role"
-                    className="border-purple-500/30 focus:border-purple-500 bg-background/50"
+                    className="border-green-500/30 focus:border-emerald-500 bg-background/50"
                   >
                     <SelectValue placeholder={translations.selectPlaceholder} />
                   </SelectTrigger>
-                  <SelectContent className="bg-background/95 backdrop-blur-sm border-purple-500/30">
+                  <SelectContent className="bg-background/95 backdrop-blur-sm border-green-500/30">
                     {ROLES.map((role) => (
                       <SelectItem 
                         key={role.value} 
                         value={role.value}
-                        className="focus:bg-purple-500/20"
+                        className="focus:bg-green-500/20"
                       >
                         {getLabel(role, locale)}
                       </SelectItem>
@@ -177,14 +178,14 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                   <Label htmlFor="years" className="gradient-text font-semibold">
                     {translations.yearsOfExperience} *
                   </Label>
-                  <span className="text-sm font-semibold text-purple-400">{formData.years_of_experience} tahun</span>
+                  <span className="text-sm font-semibold text-green-600">{formData.years_of_experience} tahun</span>
                 </div>
                 <input
                   id="years"
                   type="range"
                   min="0"
                   max="60"
-                  className="w-full h-2 bg-purple-500/20 rounded-lg appearance-none cursor-pointer accent-purple-500"
+                  className="w-full h-2 bg-green-500/20 rounded-lg appearance-none cursor-pointer accent-green-500"
                   value={formData.years_of_experience}
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, years_of_experience: e.target.value }))
@@ -207,16 +208,16 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                 >
                   <SelectTrigger 
                     id="submit-employment"
-                    className="border-purple-500/30 focus:border-purple-500 bg-background/50"
+                    className="border-green-500/30 focus:border-emerald-500 bg-background/50"
                   >
                     <SelectValue placeholder={translations.selectPlaceholder} />
                   </SelectTrigger>
-                  <SelectContent className="bg-background/95 backdrop-blur-sm border-purple-500/30">
+                  <SelectContent className="bg-background/95 backdrop-blur-sm border-green-500/30">
                     {EMPLOYMENT_TYPES.map((type) => (
                       <SelectItem 
                         key={type.value} 
                         value={type.value}
-                        className="focus:bg-purple-500/20"
+                        className="focus:bg-green-500/20"
                       >
                         {getLabel(type, locale)}
                       </SelectItem>
@@ -235,16 +236,16 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                 >
                   <SelectTrigger 
                     id="submit-city"
-                    className="border-purple-500/30 focus:border-purple-500 bg-background/50"
+                    className="border-green-500/30 focus:border-emerald-500 bg-background/50"
                   >
                     <SelectValue placeholder={translations.selectPlaceholder} />
                   </SelectTrigger>
-                  <SelectContent className="bg-background/95 backdrop-blur-sm border-purple-500/30">
+                  <SelectContent className="bg-background/95 backdrop-blur-sm border-green-500/30">
                     {CITIES.map((city) => (
                       <SelectItem 
                         key={city.value} 
                         value={city.value}
-                        className="focus:bg-purple-500/20"
+                        className="focus:bg-green-500/20"
                       >
                         {getLabel(city, locale)}
                       </SelectItem>
@@ -263,16 +264,16 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                 >
                   <SelectTrigger 
                     id="submit-company"
-                    className="border-purple-500/30 focus:border-purple-500 bg-background/50"
+                    className="border-green-500/30 focus:border-emerald-500 bg-background/50"
                   >
                     <SelectValue placeholder={translations.selectPlaceholder} />
                   </SelectTrigger>
-                  <SelectContent className="bg-background/95 backdrop-blur-sm border-purple-500/30">
+                  <SelectContent className="bg-background/95 backdrop-blur-sm border-green-500/30">
                     {COMPANY_TYPES.map((type) => (
                       <SelectItem 
                         key={type.value} 
                         value={type.value}
-                        className="focus:bg-purple-500/20"
+                        className="focus:bg-green-500/20"
                       >
                         {getLabel(type, locale)}
                       </SelectItem>
@@ -291,16 +292,16 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                 >
                   <SelectTrigger 
                     id="submit-payment"
-                    className="border-purple-500/30 focus:border-purple-500 bg-background/50"
+                    className="border-green-500/30 focus:border-emerald-500 bg-background/50"
                   >
                     <SelectValue placeholder={translations.selectPlaceholder} />
                   </SelectTrigger>
-                  <SelectContent className="bg-background/95 backdrop-blur-sm border-purple-500/30">
+                  <SelectContent className="bg-background/95 backdrop-blur-sm border-green-500/30">
                     {PAYMENT_TYPES.map((type) => (
                       <SelectItem 
                         key={type.value} 
                         value={type.value}
-                        className="focus:bg-purple-500/20"
+                        className="focus:bg-green-500/20"
                       >
                         {getLabel(type, locale)}
                       </SelectItem>
@@ -311,14 +312,19 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="salary" className="gradient-text font-semibold">
-                {translations.salary} *
-              </Label>
+              <div className="flex items-center justify-between gap-2">
+                <Label htmlFor="salary" className="gradient-text font-semibold">
+                  {translations.salary} *
+                </Label>
+                <Badge variant="outline" className="text-xs border-green-500/30 text-green-300 bg-green-500/5">
+                  {locale === 'id' ? 'Gaji Bersih' : 'Net Salary'}
+                </Badge>
+              </div>
               <Input
                 id="salary"
                 type="text"
                 inputMode="numeric"
-                className="border-purple-500/30 focus:border-purple-500 bg-background/50"
+                className="border-green-500/30 focus:border-emerald-500 bg-background/50"
                 placeholder={translations.salaryPlaceholder}
                 value={formData.salary.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
                 onChange={(e) => {
@@ -343,8 +349,8 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                         inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium
                         transition-all duration-200 border
                         ${isSelected
-                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-transparent shadow-lg shadow-purple-500/25'
-                          : 'bg-background/50 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/10'
+                          ? 'bg-gradient-to-r from-green-400 to-emerald-400 text-black border-transparent shadow-lg shadow-green-400/25'
+                          : 'bg-background/50 border-green-500/30 hover:border-emerald-400/50 hover:bg-green-500/10'
                         }
                       `}
                     >
@@ -359,7 +365,7 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                   <button
                     type="button"
                     onClick={() => setExpandedTechStack(!expandedTechStack)}
-                    className="flex items-center gap-2 text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors"
+                    className="flex items-center gap-2 text-sm font-medium text-green-600 hover:text-green-700 transition-colors"
                   >
                     <ChevronDown
                       className={`h-4 w-4 transition-transform duration-200 ${
@@ -381,8 +387,8 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
                               inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium
                               transition-all duration-200 border
                               ${isSelected
-                                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-transparent shadow-lg shadow-purple-500/25'
-                                : 'bg-background/50 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/10'
+                                ? 'bg-gradient-to-r from-green-400 to-emerald-400 text-black border-transparent shadow-lg shadow-green-400/25'
+                                : 'bg-background/50 border-green-500/30 hover:border-emerald-400/50 hover:bg-green-500/10'
                               }
                             `}
                           >
@@ -405,7 +411,7 @@ export function SubmitDialog({ locale, translations, children }: SubmitDialogPro
 
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 py-6 text-lg font-semibold"
+              className="w-full bg-gradient-to-r from-green-400 to-emerald-400 hover:from-green-500 hover:to-emerald-500 text-black border-0 py-6 text-lg font-semibold"
               disabled={
                 status === 'submitting' ||
                 !formData.role ||

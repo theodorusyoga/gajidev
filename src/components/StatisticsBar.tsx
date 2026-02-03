@@ -37,15 +37,15 @@ function StatItem({ icon, value, label, duration = 2000 }: StatItemProps) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105">
-      <div className="p-3 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+    <div className="flex flex-col items-center gap-1 md:gap-2 p-3 md:p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105">
+      <div className="p-2 md:p-3 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/20">
         {icon}
       </div>
       <div className="text-center">
-        <p className="text-2xl font-bold gradient-text">
+        <p className="text-lg md:text-2xl font-bold gradient-text">
           {formatNumber(count)}+
         </p>
-        <p className="text-xs text-muted-foreground mt-1">{label}</p>
+        <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 md:mt-1">{label}</p>
       </div>
     </div>
   )
@@ -75,12 +75,12 @@ export function StatisticsBar() {
 
   const stats = [
     {
-      icon: <Database className="h-5 w-5 text-purple-400" />,
+      icon: <Database className="h-5 w-5 text-green-600" />,
       value: statsData.salaries,
       label: t('salaries'),
     },
     {
-      icon: <Briefcase className="h-5 w-5 text-pink-400" />,
+      icon: <Briefcase className="h-5 w-5 text-emerald-600" />,
       value: statsData.roles,
       label: t('roles'),
     },
@@ -93,7 +93,7 @@ export function StatisticsBar() {
 
   return (
     <div className="mb-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-2 md:gap-4">
         {stats.map((stat, index) => (
           <StatItem
             key={index}

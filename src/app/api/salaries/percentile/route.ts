@@ -25,11 +25,23 @@ export async function GET(request: NextRequest) {
   try {
     const userSalary = parseInt(salary)
 
-    const { data, error } = await supabase
+    let query = supabase
       .from('salary_data')
       .select('salary_min, salary_max')
       .eq('role', role)
       .eq('payment_type', paymentType)
+
+    // Apply optional filters if provided
+    if (experienceLevel) query = query.eq('experience_level', experienceLevel)
+    if (employmentType) query = query.eq('employment_type', employmentType)
+    if (city) query = query.eq('city', city)
+    if (companyType) query = query.eq('company_type', companyType)
+    if (techStack) {
+      const techStackArray = techStack.split(',')
+      query = query.contains('tech_stack', techStackArray)
+    }
+
+    const { data, error } = await query
 
     if (error) {
       console.error('Supabase error:', error)

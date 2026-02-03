@@ -1,4 +1,16 @@
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+import { Geist, Geist_Mono } from 'next/font/google'
+import './globals.css'
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
 
 export default function RootLayout({
   children,
@@ -14,7 +26,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background dark`}>
         {children}
         <GoogleAnalytics />
       </body>

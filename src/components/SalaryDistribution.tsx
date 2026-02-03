@@ -52,7 +52,7 @@ export function SalaryDistribution({ role, paymentType }: SalaryDistributionProp
   if (loading) {
     return (
       <div className="flex items-center justify-center py-8">
-        <Loader2 className="h-6 w-6 animate-spin text-purple-400" />
+        <Loader2 className="h-6 w-6 animate-spin text-green-600" />
       </div>
     )
   }
@@ -83,9 +83,9 @@ export function SalaryDistribution({ role, paymentType }: SalaryDistributionProp
               <span className="text-foreground font-medium">{bucket.count} {t('people')}</span>
             </div>
             
-            <div className="w-full bg-purple-500/10 rounded-full h-2 overflow-hidden border border-purple-500/20">
+            <div className="w-full bg-green-500/10 rounded-full h-2 overflow-hidden border border-green-500/20">
               <div
-                className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300"
+                className="h-full bg-gradient-to-r from-green-400 to-emerald-400 transition-all duration-300"
                 style={{
                   width: `${maxCount > 0 ? (bucket.count / maxCount) * 100 : 0}%`,
                 }}

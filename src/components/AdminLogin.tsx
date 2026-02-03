@@ -79,7 +79,7 @@ export function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
           <Button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+            className="w-full bg-gradient-to-r from-green-400 to-emerald-400 hover:from-green-500 hover:to-emerald-500 text-black"
           >
             {loading ? 'Logging in...' : 'Login'}
           </Button>
